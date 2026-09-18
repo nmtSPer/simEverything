@@ -1,0 +1,897 @@
+<mujoco model="robocup_spl_2025_court">
+  <asset>
+    <texture name="skybox" type="skybox" builtin="gradient" rgb1="0.43 0.67 0.88" rgb2="0.96 0.98 1" width="512" height="3072"/>
+    <texture name="pitch_tex" type="2d" file="assets/textures/mini_pitch.png"/>
+    <texture name="ball_tex" type="cube" builtin="checker" rgb1="0.04 0.04 0.04" rgb2="0.96 0.96 0.94" width="256" height="256"/>
+    <texture name="grass_tile_tex" type="2d" file="assets/textures/grass_tile.png"/>
+    <material name="outer_grass" texture="grass_tile_tex" texuniform="false" texrepeat="45 32" specular="0.02" shininess="0.03"/>
+    <material name="pitch_mat" texture="pitch_tex" texuniform="false" texrepeat="1 1" specular="0.015" shininess="0.025"/>
+    <material name="goal_white" rgba="0.98 0.98 0.97 1" specular="0.35" shininess="0.55"/>
+    <material name="goal_support" rgba="0.72 0.74 0.75 1" specular="0.20" shininess="0.35"/>
+    <material name="goal_rope" rgba="0.95 0.95 0.93 0.95" specular="0.03" shininess="0.05"/>
+    <material name="ball_mat" texture="ball_tex" specular="0.10" shininess="0.16"/>
+    <material name="wood_base" rgba="0.18 0.14 0.10 1"/>
+  </asset>
+  <!-- Final RoboCup SPL 2025 field: playing area 9.0 x 6.0 m, carpet 10.4 x 7.4 m. Goals clear opening 1.5 x 0.8 m with 0.10 m front cylinders. Net per goal: 42 vertices, 13 moving = 39 DOF; both goals = 78 net DOF. -->
+  <worldbody>
+    <light name="ceiling_light" pos="0 -2 8" dir="0 0 -1" directional="true" diffuse="0.93 0.93 0.91" castshadow="true"/>
+    <light name="fill_light" pos="-4 5 4" dir="0 -1 -1" directional="false" diffuse="0.35 0.38 0.40"/>
+    <camera name="Broadcast" pos="0 -8.6 4.4" xyaxes="1 0 0 0 0.45 0.89" fovy="48"/>
+    <camera name="Top" pos="0 0 12.0" xyaxes="1 0 0 0 1 0" fovy="48"/>
+    <camera name="Sideline" pos="0 -5.3 1.8" xyaxes="1 0 0 0 0.16 0.99" fovy="62"/>
+    <camera name="East_goal_cam" pos="3.75 0 0.62" xyaxes="0 1 0 -0.07 0 0.998" fovy="78"/>
+    <geom name="outer_ground" type="plane" pos="0 0 0" size="0 0 0.1" material="outer_grass" contype="1" conaffinity="1" condim="3" friction="0.82 0.018 0.0015"/>    <!-- 105 x 68 m playing surface. Lines are baked into the PNG texture, so they do not create contacts. -->
+    <geom name="wooden_base" type="box" pos="0 0 -0.028" size="5.200 3.700 0.024" material="wood_base" contype="0" conaffinity="0"/>
+    <geom name="mini_pitch_visual" type="plane" pos="0 0 0.001" size="5.200 3.700 0.1" material="pitch_mat" contype="1" conaffinity="1" condim="3" friction="0.82 0.018 0.0015"/>
+    <body name="goal_east" pos="4.500 0 0">
+      <geom name="goal_east_left_post" type="cylinder" fromto="0.000000 -0.800000 0.000000 0.000000 -0.800000 0.850000" size="0.050" material="goal_white" contype="1" conaffinity="1" condim="3" friction="0.45 0.01 0.001"/>
+      <geom name="goal_east_right_post" type="cylinder" fromto="0.000000 0.800000 0.000000 0.000000 0.800000 0.850000" size="0.050" material="goal_white" contype="1" conaffinity="1" condim="3" friction="0.45 0.01 0.001"/>
+      <geom name="goal_east_crossbar" type="cylinder" fromto="0.000000 -0.800000 0.850000 0.000000 0.800000 0.850000" size="0.050" material="goal_white" contype="1" conaffinity="1" condim="3" friction="0.45 0.01 0.001"/>
+      <geom name="goal_east_top_left_rail" type="cylinder" fromto="0.000000 -0.800000 0.850000 0.500000 -0.800000 0.850000" size="0.015" material="goal_support" contype="1" conaffinity="1" condim="3" friction="0.40 0.008 0.001"/>
+      <geom name="goal_east_top_right_rail" type="cylinder" fromto="0.000000 0.800000 0.850000 0.500000 0.800000 0.850000" size="0.015" material="goal_support" contype="1" conaffinity="1" condim="3" friction="0.40 0.008 0.001"/>
+      <geom name="goal_east_rear_top_bar" type="cylinder" fromto="0.500000 -0.800000 0.850000 0.500000 0.800000 0.850000" size="0.015" material="goal_support" contype="1" conaffinity="1" condim="3" friction="0.40 0.008 0.001"/>
+      <geom name="goal_east_left_rear_slope" type="cylinder" fromto="0.500000 -0.800000 0.850000 0.800000 -0.800000 0.015000" size="0.015" material="goal_support" contype="1" conaffinity="1" condim="3" friction="0.40 0.008 0.001"/>
+      <geom name="goal_east_right_rear_slope" type="cylinder" fromto="0.500000 0.800000 0.850000 0.800000 0.800000 0.015000" size="0.015" material="goal_support" contype="1" conaffinity="1" condim="3" friction="0.40 0.008 0.001"/>
+      <geom name="goal_east_rear_base_bar" type="cylinder" fromto="0.800000 -0.800000 0.015000 0.800000 0.800000 0.015000" size="0.015" material="goal_support" contype="1" conaffinity="1" condim="3" friction="0.40 0.008 0.001"/>
+      <geom name="goal_east_left_base_rail" type="cylinder" fromto="0.000000 -0.800000 0.015000 0.800000 -0.800000 0.015000" size="0.015" material="goal_support" contype="1" conaffinity="1" condim="3" friction="0.40 0.008 0.001"/>
+      <geom name="goal_east_right_base_rail" type="cylinder" fromto="0.000000 0.800000 0.015000 0.800000 0.800000 0.015000" size="0.015" material="goal_support" contype="1" conaffinity="1" condim="3" friction="0.40 0.008 0.001"/>
+      <site name="goal_east_net_site_000" pos="0.780000 -0.742000 0.025000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_east_net_site_001" pos="0.780000 -0.371000 0.025000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_east_net_site_002" pos="0.780000 0.000000 0.025000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_east_net_site_003" pos="0.780000 0.371000 0.025000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_east_net_site_004" pos="0.780000 0.742000 0.025000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_east_net_site_005" pos="0.680000 -0.742000 0.280667" size="0.0012" rgba="1 1 1 0"/>
+      <body name="goal_east_net_node_006" pos="0.680000 -0.371000 0.280667">
+        <inertial pos="0 0 0" mass="0.0076923" diaginertia="0.0000015 0.0000015 0.0000015"/>
+        <joint name="goal_east_net_node_006_jx" type="slide" axis="1 0 0" damping="0.0350"/>
+        <joint name="goal_east_net_node_006_jy" type="slide" axis="0 1 0" damping="0.0350"/>
+        <joint name="goal_east_net_node_006_jz" type="slide" axis="0 0 1" damping="0.0350"/>
+        <site name="goal_east_net_site_006" pos="0 0 0" size="0.0012" rgba="1 1 1 0"/>
+      </body>
+      <body name="goal_east_net_node_007" pos="0.680000 0.000000 0.280667">
+        <inertial pos="0 0 0" mass="0.0076923" diaginertia="0.0000015 0.0000015 0.0000015"/>
+        <joint name="goal_east_net_node_007_jx" type="slide" axis="1 0 0" damping="0.0350"/>
+        <joint name="goal_east_net_node_007_jy" type="slide" axis="0 1 0" damping="0.0350"/>
+        <joint name="goal_east_net_node_007_jz" type="slide" axis="0 0 1" damping="0.0350"/>
+        <site name="goal_east_net_site_007" pos="0 0 0" size="0.0012" rgba="1 1 1 0"/>
+      </body>
+      <body name="goal_east_net_node_008" pos="0.680000 0.371000 0.280667">
+        <inertial pos="0 0 0" mass="0.0076923" diaginertia="0.0000015 0.0000015 0.0000015"/>
+        <joint name="goal_east_net_node_008_jx" type="slide" axis="1 0 0" damping="0.0350"/>
+        <joint name="goal_east_net_node_008_jy" type="slide" axis="0 1 0" damping="0.0350"/>
+        <joint name="goal_east_net_node_008_jz" type="slide" axis="0 0 1" damping="0.0350"/>
+        <site name="goal_east_net_site_008" pos="0 0 0" size="0.0012" rgba="1 1 1 0"/>
+      </body>
+      <site name="goal_east_net_site_009" pos="0.680000 0.742000 0.280667" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_east_net_site_010" pos="0.580000 -0.742000 0.536333" size="0.0012" rgba="1 1 1 0"/>
+      <body name="goal_east_net_node_011" pos="0.580000 -0.371000 0.536333">
+        <inertial pos="0 0 0" mass="0.0076923" diaginertia="0.0000015 0.0000015 0.0000015"/>
+        <joint name="goal_east_net_node_011_jx" type="slide" axis="1 0 0" damping="0.0350"/>
+        <joint name="goal_east_net_node_011_jy" type="slide" axis="0 1 0" damping="0.0350"/>
+        <joint name="goal_east_net_node_011_jz" type="slide" axis="0 0 1" damping="0.0350"/>
+        <site name="goal_east_net_site_011" pos="0 0 0" size="0.0012" rgba="1 1 1 0"/>
+      </body>
+      <body name="goal_east_net_node_012" pos="0.580000 0.000000 0.536333">
+        <inertial pos="0 0 0" mass="0.0076923" diaginertia="0.0000015 0.0000015 0.0000015"/>
+        <joint name="goal_east_net_node_012_jx" type="slide" axis="1 0 0" damping="0.0350"/>
+        <joint name="goal_east_net_node_012_jy" type="slide" axis="0 1 0" damping="0.0350"/>
+        <joint name="goal_east_net_node_012_jz" type="slide" axis="0 0 1" damping="0.0350"/>
+        <site name="goal_east_net_site_012" pos="0 0 0" size="0.0012" rgba="1 1 1 0"/>
+      </body>
+      <body name="goal_east_net_node_013" pos="0.580000 0.371000 0.536333">
+        <inertial pos="0 0 0" mass="0.0076923" diaginertia="0.0000015 0.0000015 0.0000015"/>
+        <joint name="goal_east_net_node_013_jx" type="slide" axis="1 0 0" damping="0.0350"/>
+        <joint name="goal_east_net_node_013_jy" type="slide" axis="0 1 0" damping="0.0350"/>
+        <joint name="goal_east_net_node_013_jz" type="slide" axis="0 0 1" damping="0.0350"/>
+        <site name="goal_east_net_site_013" pos="0 0 0" size="0.0012" rgba="1 1 1 0"/>
+      </body>
+      <site name="goal_east_net_site_014" pos="0.580000 0.742000 0.536333" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_east_net_site_015" pos="0.480000 -0.742000 0.792000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_east_net_site_016" pos="0.480000 -0.371000 0.792000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_east_net_site_017" pos="0.480000 0.000000 0.792000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_east_net_site_018" pos="0.480000 0.371000 0.792000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_east_net_site_019" pos="0.480000 0.742000 0.792000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_east_net_site_020" pos="0.060000 -0.742000 0.792000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_east_net_site_021" pos="0.060000 -0.371000 0.792000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_east_net_site_022" pos="0.060000 0.000000 0.792000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_east_net_site_023" pos="0.060000 0.371000 0.792000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_east_net_site_024" pos="0.060000 0.742000 0.792000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_east_net_site_025" pos="0.270000 -0.742000 0.792000" size="0.0012" rgba="1 1 1 0"/>
+      <body name="goal_east_net_node_026" pos="0.270000 -0.371000 0.792000">
+        <inertial pos="0 0 0" mass="0.0076923" diaginertia="0.0000015 0.0000015 0.0000015"/>
+        <joint name="goal_east_net_node_026_jx" type="slide" axis="1 0 0" damping="0.0350"/>
+        <joint name="goal_east_net_node_026_jy" type="slide" axis="0 1 0" damping="0.0350"/>
+        <joint name="goal_east_net_node_026_jz" type="slide" axis="0 0 1" damping="0.0350"/>
+        <site name="goal_east_net_site_026" pos="0 0 0" size="0.0012" rgba="1 1 1 0"/>
+      </body>
+      <body name="goal_east_net_node_027" pos="0.270000 0.000000 0.792000">
+        <inertial pos="0 0 0" mass="0.0076923" diaginertia="0.0000015 0.0000015 0.0000015"/>
+        <joint name="goal_east_net_node_027_jx" type="slide" axis="1 0 0" damping="0.0350"/>
+        <joint name="goal_east_net_node_027_jy" type="slide" axis="0 1 0" damping="0.0350"/>
+        <joint name="goal_east_net_node_027_jz" type="slide" axis="0 0 1" damping="0.0350"/>
+        <site name="goal_east_net_site_027" pos="0 0 0" size="0.0012" rgba="1 1 1 0"/>
+      </body>
+      <body name="goal_east_net_node_028" pos="0.270000 0.371000 0.792000">
+        <inertial pos="0 0 0" mass="0.0076923" diaginertia="0.0000015 0.0000015 0.0000015"/>
+        <joint name="goal_east_net_node_028_jx" type="slide" axis="1 0 0" damping="0.0350"/>
+        <joint name="goal_east_net_node_028_jy" type="slide" axis="0 1 0" damping="0.0350"/>
+        <joint name="goal_east_net_node_028_jz" type="slide" axis="0 0 1" damping="0.0350"/>
+        <site name="goal_east_net_site_028" pos="0 0 0" size="0.0012" rgba="1 1 1 0"/>
+      </body>
+      <site name="goal_east_net_site_029" pos="0.270000 0.742000 0.792000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_east_net_site_030" pos="0.060000 -0.742000 0.025000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_east_net_site_031" pos="0.420000 -0.742000 0.025000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_east_net_site_032" pos="0.060000 -0.742000 0.280667" size="0.0012" rgba="1 1 1 0"/>
+      <body name="goal_east_net_node_033" pos="0.370000 -0.742000 0.280667">
+        <inertial pos="0 0 0" mass="0.0076923" diaginertia="0.0000015 0.0000015 0.0000015"/>
+        <joint name="goal_east_net_node_033_jx" type="slide" axis="1 0 0" damping="0.0350"/>
+        <joint name="goal_east_net_node_033_jy" type="slide" axis="0 1 0" damping="0.0350"/>
+        <joint name="goal_east_net_node_033_jz" type="slide" axis="0 0 1" damping="0.0350"/>
+        <site name="goal_east_net_site_033" pos="0 0 0" size="0.0012" rgba="1 1 1 0"/>
+      </body>
+      <site name="goal_east_net_site_034" pos="0.060000 -0.742000 0.536333" size="0.0012" rgba="1 1 1 0"/>
+      <body name="goal_east_net_node_035" pos="0.320000 -0.742000 0.536333">
+        <inertial pos="0 0 0" mass="0.0076923" diaginertia="0.0000015 0.0000015 0.0000015"/>
+        <joint name="goal_east_net_node_035_jx" type="slide" axis="1 0 0" damping="0.0350"/>
+        <joint name="goal_east_net_node_035_jy" type="slide" axis="0 1 0" damping="0.0350"/>
+        <joint name="goal_east_net_node_035_jz" type="slide" axis="0 0 1" damping="0.0350"/>
+        <site name="goal_east_net_site_035" pos="0 0 0" size="0.0012" rgba="1 1 1 0"/>
+      </body>
+      <site name="goal_east_net_site_036" pos="0.060000 0.742000 0.025000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_east_net_site_037" pos="0.420000 0.742000 0.025000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_east_net_site_038" pos="0.060000 0.742000 0.280667" size="0.0012" rgba="1 1 1 0"/>
+      <body name="goal_east_net_node_039" pos="0.370000 0.742000 0.280667">
+        <inertial pos="0 0 0" mass="0.0076923" diaginertia="0.0000015 0.0000015 0.0000015"/>
+        <joint name="goal_east_net_node_039_jx" type="slide" axis="1 0 0" damping="0.0350"/>
+        <joint name="goal_east_net_node_039_jy" type="slide" axis="0 1 0" damping="0.0350"/>
+        <joint name="goal_east_net_node_039_jz" type="slide" axis="0 0 1" damping="0.0350"/>
+        <site name="goal_east_net_site_039" pos="0 0 0" size="0.0012" rgba="1 1 1 0"/>
+      </body>
+      <site name="goal_east_net_site_040" pos="0.060000 0.742000 0.536333" size="0.0012" rgba="1 1 1 0"/>
+      <body name="goal_east_net_node_041" pos="0.320000 0.742000 0.536333">
+        <inertial pos="0 0 0" mass="0.0076923" diaginertia="0.0000015 0.0000015 0.0000015"/>
+        <joint name="goal_east_net_node_041_jx" type="slide" axis="1 0 0" damping="0.0350"/>
+        <joint name="goal_east_net_node_041_jy" type="slide" axis="0 1 0" damping="0.0350"/>
+        <joint name="goal_east_net_node_041_jz" type="slide" axis="0 0 1" damping="0.0350"/>
+        <site name="goal_east_net_site_041" pos="0 0 0" size="0.0012" rgba="1 1 1 0"/>
+      </body>
+    </body>
+    <body name="goal_west" pos="-4.500 0 0" quat="0 0 0 1">
+      <geom name="goal_west_left_post" type="cylinder" fromto="0.000000 -0.800000 0.000000 0.000000 -0.800000 0.850000" size="0.050" material="goal_white" contype="1" conaffinity="1" condim="3" friction="0.45 0.01 0.001"/>
+      <geom name="goal_west_right_post" type="cylinder" fromto="0.000000 0.800000 0.000000 0.000000 0.800000 0.850000" size="0.050" material="goal_white" contype="1" conaffinity="1" condim="3" friction="0.45 0.01 0.001"/>
+      <geom name="goal_west_crossbar" type="cylinder" fromto="0.000000 -0.800000 0.850000 0.000000 0.800000 0.850000" size="0.050" material="goal_white" contype="1" conaffinity="1" condim="3" friction="0.45 0.01 0.001"/>
+      <geom name="goal_west_top_left_rail" type="cylinder" fromto="0.000000 -0.800000 0.850000 0.500000 -0.800000 0.850000" size="0.015" material="goal_support" contype="1" conaffinity="1" condim="3" friction="0.40 0.008 0.001"/>
+      <geom name="goal_west_top_right_rail" type="cylinder" fromto="0.000000 0.800000 0.850000 0.500000 0.800000 0.850000" size="0.015" material="goal_support" contype="1" conaffinity="1" condim="3" friction="0.40 0.008 0.001"/>
+      <geom name="goal_west_rear_top_bar" type="cylinder" fromto="0.500000 -0.800000 0.850000 0.500000 0.800000 0.850000" size="0.015" material="goal_support" contype="1" conaffinity="1" condim="3" friction="0.40 0.008 0.001"/>
+      <geom name="goal_west_left_rear_slope" type="cylinder" fromto="0.500000 -0.800000 0.850000 0.800000 -0.800000 0.015000" size="0.015" material="goal_support" contype="1" conaffinity="1" condim="3" friction="0.40 0.008 0.001"/>
+      <geom name="goal_west_right_rear_slope" type="cylinder" fromto="0.500000 0.800000 0.850000 0.800000 0.800000 0.015000" size="0.015" material="goal_support" contype="1" conaffinity="1" condim="3" friction="0.40 0.008 0.001"/>
+      <geom name="goal_west_rear_base_bar" type="cylinder" fromto="0.800000 -0.800000 0.015000 0.800000 0.800000 0.015000" size="0.015" material="goal_support" contype="1" conaffinity="1" condim="3" friction="0.40 0.008 0.001"/>
+      <geom name="goal_west_left_base_rail" type="cylinder" fromto="0.000000 -0.800000 0.015000 0.800000 -0.800000 0.015000" size="0.015" material="goal_support" contype="1" conaffinity="1" condim="3" friction="0.40 0.008 0.001"/>
+      <geom name="goal_west_right_base_rail" type="cylinder" fromto="0.000000 0.800000 0.015000 0.800000 0.800000 0.015000" size="0.015" material="goal_support" contype="1" conaffinity="1" condim="3" friction="0.40 0.008 0.001"/>
+      <site name="goal_west_net_site_000" pos="0.780000 -0.742000 0.025000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_west_net_site_001" pos="0.780000 -0.371000 0.025000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_west_net_site_002" pos="0.780000 0.000000 0.025000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_west_net_site_003" pos="0.780000 0.371000 0.025000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_west_net_site_004" pos="0.780000 0.742000 0.025000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_west_net_site_005" pos="0.680000 -0.742000 0.280667" size="0.0012" rgba="1 1 1 0"/>
+      <body name="goal_west_net_node_006" pos="0.680000 -0.371000 0.280667">
+        <inertial pos="0 0 0" mass="0.0076923" diaginertia="0.0000015 0.0000015 0.0000015"/>
+        <joint name="goal_west_net_node_006_jx" type="slide" axis="1 0 0" damping="0.0350"/>
+        <joint name="goal_west_net_node_006_jy" type="slide" axis="0 1 0" damping="0.0350"/>
+        <joint name="goal_west_net_node_006_jz" type="slide" axis="0 0 1" damping="0.0350"/>
+        <site name="goal_west_net_site_006" pos="0 0 0" size="0.0012" rgba="1 1 1 0"/>
+      </body>
+      <body name="goal_west_net_node_007" pos="0.680000 0.000000 0.280667">
+        <inertial pos="0 0 0" mass="0.0076923" diaginertia="0.0000015 0.0000015 0.0000015"/>
+        <joint name="goal_west_net_node_007_jx" type="slide" axis="1 0 0" damping="0.0350"/>
+        <joint name="goal_west_net_node_007_jy" type="slide" axis="0 1 0" damping="0.0350"/>
+        <joint name="goal_west_net_node_007_jz" type="slide" axis="0 0 1" damping="0.0350"/>
+        <site name="goal_west_net_site_007" pos="0 0 0" size="0.0012" rgba="1 1 1 0"/>
+      </body>
+      <body name="goal_west_net_node_008" pos="0.680000 0.371000 0.280667">
+        <inertial pos="0 0 0" mass="0.0076923" diaginertia="0.0000015 0.0000015 0.0000015"/>
+        <joint name="goal_west_net_node_008_jx" type="slide" axis="1 0 0" damping="0.0350"/>
+        <joint name="goal_west_net_node_008_jy" type="slide" axis="0 1 0" damping="0.0350"/>
+        <joint name="goal_west_net_node_008_jz" type="slide" axis="0 0 1" damping="0.0350"/>
+        <site name="goal_west_net_site_008" pos="0 0 0" size="0.0012" rgba="1 1 1 0"/>
+      </body>
+      <site name="goal_west_net_site_009" pos="0.680000 0.742000 0.280667" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_west_net_site_010" pos="0.580000 -0.742000 0.536333" size="0.0012" rgba="1 1 1 0"/>
+      <body name="goal_west_net_node_011" pos="0.580000 -0.371000 0.536333">
+        <inertial pos="0 0 0" mass="0.0076923" diaginertia="0.0000015 0.0000015 0.0000015"/>
+        <joint name="goal_west_net_node_011_jx" type="slide" axis="1 0 0" damping="0.0350"/>
+        <joint name="goal_west_net_node_011_jy" type="slide" axis="0 1 0" damping="0.0350"/>
+        <joint name="goal_west_net_node_011_jz" type="slide" axis="0 0 1" damping="0.0350"/>
+        <site name="goal_west_net_site_011" pos="0 0 0" size="0.0012" rgba="1 1 1 0"/>
+      </body>
+      <body name="goal_west_net_node_012" pos="0.580000 0.000000 0.536333">
+        <inertial pos="0 0 0" mass="0.0076923" diaginertia="0.0000015 0.0000015 0.0000015"/>
+        <joint name="goal_west_net_node_012_jx" type="slide" axis="1 0 0" damping="0.0350"/>
+        <joint name="goal_west_net_node_012_jy" type="slide" axis="0 1 0" damping="0.0350"/>
+        <joint name="goal_west_net_node_012_jz" type="slide" axis="0 0 1" damping="0.0350"/>
+        <site name="goal_west_net_site_012" pos="0 0 0" size="0.0012" rgba="1 1 1 0"/>
+      </body>
+      <body name="goal_west_net_node_013" pos="0.580000 0.371000 0.536333">
+        <inertial pos="0 0 0" mass="0.0076923" diaginertia="0.0000015 0.0000015 0.0000015"/>
+        <joint name="goal_west_net_node_013_jx" type="slide" axis="1 0 0" damping="0.0350"/>
+        <joint name="goal_west_net_node_013_jy" type="slide" axis="0 1 0" damping="0.0350"/>
+        <joint name="goal_west_net_node_013_jz" type="slide" axis="0 0 1" damping="0.0350"/>
+        <site name="goal_west_net_site_013" pos="0 0 0" size="0.0012" rgba="1 1 1 0"/>
+      </body>
+      <site name="goal_west_net_site_014" pos="0.580000 0.742000 0.536333" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_west_net_site_015" pos="0.480000 -0.742000 0.792000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_west_net_site_016" pos="0.480000 -0.371000 0.792000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_west_net_site_017" pos="0.480000 0.000000 0.792000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_west_net_site_018" pos="0.480000 0.371000 0.792000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_west_net_site_019" pos="0.480000 0.742000 0.792000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_west_net_site_020" pos="0.060000 -0.742000 0.792000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_west_net_site_021" pos="0.060000 -0.371000 0.792000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_west_net_site_022" pos="0.060000 0.000000 0.792000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_west_net_site_023" pos="0.060000 0.371000 0.792000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_west_net_site_024" pos="0.060000 0.742000 0.792000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_west_net_site_025" pos="0.270000 -0.742000 0.792000" size="0.0012" rgba="1 1 1 0"/>
+      <body name="goal_west_net_node_026" pos="0.270000 -0.371000 0.792000">
+        <inertial pos="0 0 0" mass="0.0076923" diaginertia="0.0000015 0.0000015 0.0000015"/>
+        <joint name="goal_west_net_node_026_jx" type="slide" axis="1 0 0" damping="0.0350"/>
+        <joint name="goal_west_net_node_026_jy" type="slide" axis="0 1 0" damping="0.0350"/>
+        <joint name="goal_west_net_node_026_jz" type="slide" axis="0 0 1" damping="0.0350"/>
+        <site name="goal_west_net_site_026" pos="0 0 0" size="0.0012" rgba="1 1 1 0"/>
+      </body>
+      <body name="goal_west_net_node_027" pos="0.270000 0.000000 0.792000">
+        <inertial pos="0 0 0" mass="0.0076923" diaginertia="0.0000015 0.0000015 0.0000015"/>
+        <joint name="goal_west_net_node_027_jx" type="slide" axis="1 0 0" damping="0.0350"/>
+        <joint name="goal_west_net_node_027_jy" type="slide" axis="0 1 0" damping="0.0350"/>
+        <joint name="goal_west_net_node_027_jz" type="slide" axis="0 0 1" damping="0.0350"/>
+        <site name="goal_west_net_site_027" pos="0 0 0" size="0.0012" rgba="1 1 1 0"/>
+      </body>
+      <body name="goal_west_net_node_028" pos="0.270000 0.371000 0.792000">
+        <inertial pos="0 0 0" mass="0.0076923" diaginertia="0.0000015 0.0000015 0.0000015"/>
+        <joint name="goal_west_net_node_028_jx" type="slide" axis="1 0 0" damping="0.0350"/>
+        <joint name="goal_west_net_node_028_jy" type="slide" axis="0 1 0" damping="0.0350"/>
+        <joint name="goal_west_net_node_028_jz" type="slide" axis="0 0 1" damping="0.0350"/>
+        <site name="goal_west_net_site_028" pos="0 0 0" size="0.0012" rgba="1 1 1 0"/>
+      </body>
+      <site name="goal_west_net_site_029" pos="0.270000 0.742000 0.792000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_west_net_site_030" pos="0.060000 -0.742000 0.025000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_west_net_site_031" pos="0.420000 -0.742000 0.025000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_west_net_site_032" pos="0.060000 -0.742000 0.280667" size="0.0012" rgba="1 1 1 0"/>
+      <body name="goal_west_net_node_033" pos="0.370000 -0.742000 0.280667">
+        <inertial pos="0 0 0" mass="0.0076923" diaginertia="0.0000015 0.0000015 0.0000015"/>
+        <joint name="goal_west_net_node_033_jx" type="slide" axis="1 0 0" damping="0.0350"/>
+        <joint name="goal_west_net_node_033_jy" type="slide" axis="0 1 0" damping="0.0350"/>
+        <joint name="goal_west_net_node_033_jz" type="slide" axis="0 0 1" damping="0.0350"/>
+        <site name="goal_west_net_site_033" pos="0 0 0" size="0.0012" rgba="1 1 1 0"/>
+      </body>
+      <site name="goal_west_net_site_034" pos="0.060000 -0.742000 0.536333" size="0.0012" rgba="1 1 1 0"/>
+      <body name="goal_west_net_node_035" pos="0.320000 -0.742000 0.536333">
+        <inertial pos="0 0 0" mass="0.0076923" diaginertia="0.0000015 0.0000015 0.0000015"/>
+        <joint name="goal_west_net_node_035_jx" type="slide" axis="1 0 0" damping="0.0350"/>
+        <joint name="goal_west_net_node_035_jy" type="slide" axis="0 1 0" damping="0.0350"/>
+        <joint name="goal_west_net_node_035_jz" type="slide" axis="0 0 1" damping="0.0350"/>
+        <site name="goal_west_net_site_035" pos="0 0 0" size="0.0012" rgba="1 1 1 0"/>
+      </body>
+      <site name="goal_west_net_site_036" pos="0.060000 0.742000 0.025000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_west_net_site_037" pos="0.420000 0.742000 0.025000" size="0.0012" rgba="1 1 1 0"/>
+      <site name="goal_west_net_site_038" pos="0.060000 0.742000 0.280667" size="0.0012" rgba="1 1 1 0"/>
+      <body name="goal_west_net_node_039" pos="0.370000 0.742000 0.280667">
+        <inertial pos="0 0 0" mass="0.0076923" diaginertia="0.0000015 0.0000015 0.0000015"/>
+        <joint name="goal_west_net_node_039_jx" type="slide" axis="1 0 0" damping="0.0350"/>
+        <joint name="goal_west_net_node_039_jy" type="slide" axis="0 1 0" damping="0.0350"/>
+        <joint name="goal_west_net_node_039_jz" type="slide" axis="0 0 1" damping="0.0350"/>
+        <site name="goal_west_net_site_039" pos="0 0 0" size="0.0012" rgba="1 1 1 0"/>
+      </body>
+      <site name="goal_west_net_site_040" pos="0.060000 0.742000 0.536333" size="0.0012" rgba="1 1 1 0"/>
+      <body name="goal_west_net_node_041" pos="0.320000 0.742000 0.536333">
+        <inertial pos="0 0 0" mass="0.0076923" diaginertia="0.0000015 0.0000015 0.0000015"/>
+        <joint name="goal_west_net_node_041_jx" type="slide" axis="1 0 0" damping="0.0350"/>
+        <joint name="goal_west_net_node_041_jy" type="slide" axis="0 1 0" damping="0.0350"/>
+        <joint name="goal_west_net_node_041_jz" type="slide" axis="0 0 1" damping="0.0350"/>
+        <site name="goal_west_net_site_041" pos="0 0 0" size="0.0012" rgba="1 1 1 0"/>
+      </body>
+    </body>
+    <body name="spl_ball" pos="0 0 0.052">
+      <freejoint name="ball_free"/>
+      <geom name="ball" type="sphere" size="0.050" mass="0.044" material="ball_mat" contype="1" conaffinity="1" condim="6" friction="0.55 0.012 0.0008" solref="0.012 1" solimp="0.86 0.96 0.002"/>
+    </body>
+  </worldbody>
+  <deformable>
+    <flex name="goal_east_net_surface" dim="2" radius="0.0032" body="goal_east goal_east goal_east goal_east goal_east goal_east goal_east_net_node_006 goal_east_net_node_007 goal_east_net_node_008 goal_east goal_east goal_east_net_node_011 goal_east_net_node_012 goal_east_net_node_013 goal_east goal_east goal_east goal_east goal_east goal_east goal_east goal_east goal_east goal_east goal_east goal_east goal_east_net_node_026 goal_east_net_node_027 goal_east_net_node_028 goal_east goal_east goal_east goal_east goal_east_net_node_033 goal_east goal_east_net_node_035 goal_east goal_east goal_east goal_east_net_node_039 goal_east goal_east_net_node_041" vertex="0.780000 -0.742000 0.025000 0.780000 -0.371000 0.025000 0.780000 0.000000 0.025000 0.780000 0.371000 0.025000 0.780000 0.742000 0.025000 0.680000 -0.742000 0.280667 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.680000 0.742000 0.280667 0.580000 -0.742000 0.536333 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.580000 0.742000 0.536333 0.480000 -0.742000 0.792000 0.480000 -0.371000 0.792000 0.480000 0.000000 0.792000 0.480000 0.371000 0.792000 0.480000 0.742000 0.792000 0.060000 -0.742000 0.792000 0.060000 -0.371000 0.792000 0.060000 0.000000 0.792000 0.060000 0.371000 0.792000 0.060000 0.742000 0.792000 0.270000 -0.742000 0.792000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.270000 0.742000 0.792000 0.060000 -0.742000 0.025000 0.420000 -0.742000 0.025000 0.060000 -0.742000 0.280667 0.000000 0.000000 0.000000 0.060000 -0.742000 0.536333 0.000000 0.000000 0.000000 0.060000 0.742000 0.025000 0.420000 0.742000 0.025000 0.060000 0.742000 0.280667 0.000000 0.000000 0.000000 0.060000 0.742000 0.536333 0.000000 0.000000 0.000000" element="0 1 6 0 6 5 1 2 7 1 7 6 2 3 8 2 8 7 3 4 9 3 9 8 5 6 11 5 11 10 6 7 12 6 12 11 7 8 13 7 13 12 8 9 14 8 14 13 10 11 16 10 16 15 11 12 17 11 17 16 12 13 18 12 18 17 13 14 19 13 19 18 20 25 26 20 26 21 21 26 27 21 27 22 22 27 28 22 28 23 23 28 29 23 29 24 25 15 16 25 16 26 26 16 17 26 17 27 27 17 18 27 18 28 28 18 19 28 19 29 30 33 31 30 32 33 31 5 0 31 33 5 32 35 33 32 34 35 33 10 5 33 35 10 34 25 35 34 20 25 35 15 10 35 25 15 36 37 39 36 39 38 37 4 9 37 9 39 38 39 41 38 41 40 39 9 14 39 14 41 40 41 29 40 29 24 41 14 19 41 19 29" rgba="0.96 0.96 0.94 0.035" group="4" flatskin="true">
+      <contact contype="1" conaffinity="1" condim="3" friction="0.12 0.002 0.0001" internal="false" selfcollide="none" solref="0.008 1" solimp="0.88 0.97 0.0015"/>
+      <edge damping="0.080"/>
+    </flex>
+    <flex name="goal_west_net_surface" dim="2" radius="0.0032" body="goal_west goal_west goal_west goal_west goal_west goal_west goal_west_net_node_006 goal_west_net_node_007 goal_west_net_node_008 goal_west goal_west goal_west_net_node_011 goal_west_net_node_012 goal_west_net_node_013 goal_west goal_west goal_west goal_west goal_west goal_west goal_west goal_west goal_west goal_west goal_west goal_west goal_west_net_node_026 goal_west_net_node_027 goal_west_net_node_028 goal_west goal_west goal_west goal_west goal_west_net_node_033 goal_west goal_west_net_node_035 goal_west goal_west goal_west goal_west_net_node_039 goal_west goal_west_net_node_041" vertex="0.780000 -0.742000 0.025000 0.780000 -0.371000 0.025000 0.780000 0.000000 0.025000 0.780000 0.371000 0.025000 0.780000 0.742000 0.025000 0.680000 -0.742000 0.280667 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.680000 0.742000 0.280667 0.580000 -0.742000 0.536333 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.580000 0.742000 0.536333 0.480000 -0.742000 0.792000 0.480000 -0.371000 0.792000 0.480000 0.000000 0.792000 0.480000 0.371000 0.792000 0.480000 0.742000 0.792000 0.060000 -0.742000 0.792000 0.060000 -0.371000 0.792000 0.060000 0.000000 0.792000 0.060000 0.371000 0.792000 0.060000 0.742000 0.792000 0.270000 -0.742000 0.792000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.270000 0.742000 0.792000 0.060000 -0.742000 0.025000 0.420000 -0.742000 0.025000 0.060000 -0.742000 0.280667 0.000000 0.000000 0.000000 0.060000 -0.742000 0.536333 0.000000 0.000000 0.000000 0.060000 0.742000 0.025000 0.420000 0.742000 0.025000 0.060000 0.742000 0.280667 0.000000 0.000000 0.000000 0.060000 0.742000 0.536333 0.000000 0.000000 0.000000" element="0 1 6 0 6 5 1 2 7 1 7 6 2 3 8 2 8 7 3 4 9 3 9 8 5 6 11 5 11 10 6 7 12 6 12 11 7 8 13 7 13 12 8 9 14 8 14 13 10 11 16 10 16 15 11 12 17 11 17 16 12 13 18 12 18 17 13 14 19 13 19 18 20 25 26 20 26 21 21 26 27 21 27 22 22 27 28 22 28 23 23 28 29 23 29 24 25 15 16 25 16 26 26 16 17 26 17 27 27 17 18 27 18 28 28 18 19 28 19 29 30 33 31 30 32 33 31 5 0 31 33 5 32 35 33 32 34 35 33 10 5 33 35 10 34 25 35 34 20 25 35 15 10 35 25 15 36 37 39 36 39 38 37 4 9 37 9 39 38 39 41 38 41 40 39 9 14 39 14 41 40 41 29 40 29 24 41 14 19 41 19 29" rgba="0.96 0.96 0.94 0.035" group="4" flatskin="true">
+      <contact contype="1" conaffinity="1" condim="3" friction="0.12 0.002 0.0001" internal="false" selfcollide="none" solref="0.008 1" solimp="0.88 0.97 0.0015"/>
+      <edge damping="0.080"/>
+    </flex>
+  </deformable>
+  <tendon>
+    <spatial name="goal_east_rope_000" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_000"/>
+      <site site="goal_east_net_site_001"/>
+    </spatial>
+    <spatial name="goal_east_rope_001" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_000"/>
+      <site site="goal_east_net_site_005"/>
+    </spatial>
+    <spatial name="goal_east_rope_002" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_000"/>
+      <site site="goal_east_net_site_031"/>
+    </spatial>
+    <spatial name="goal_east_rope_003" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_001"/>
+      <site site="goal_east_net_site_002"/>
+    </spatial>
+    <spatial name="goal_east_rope_004" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_001"/>
+      <site site="goal_east_net_site_006"/>
+    </spatial>
+    <spatial name="goal_east_rope_005" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_002"/>
+      <site site="goal_east_net_site_003"/>
+    </spatial>
+    <spatial name="goal_east_rope_006" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_002"/>
+      <site site="goal_east_net_site_007"/>
+    </spatial>
+    <spatial name="goal_east_rope_007" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_003"/>
+      <site site="goal_east_net_site_004"/>
+    </spatial>
+    <spatial name="goal_east_rope_008" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_003"/>
+      <site site="goal_east_net_site_008"/>
+    </spatial>
+    <spatial name="goal_east_rope_009" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_004"/>
+      <site site="goal_east_net_site_009"/>
+    </spatial>
+    <spatial name="goal_east_rope_010" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_004"/>
+      <site site="goal_east_net_site_037"/>
+    </spatial>
+    <spatial name="goal_east_rope_011" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_005"/>
+      <site site="goal_east_net_site_006"/>
+    </spatial>
+    <spatial name="goal_east_rope_012" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_005"/>
+      <site site="goal_east_net_site_010"/>
+    </spatial>
+    <spatial name="goal_east_rope_013" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_005"/>
+      <site site="goal_east_net_site_033"/>
+    </spatial>
+    <spatial name="goal_east_rope_014" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_006"/>
+      <site site="goal_east_net_site_007"/>
+    </spatial>
+    <spatial name="goal_east_rope_015" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_006"/>
+      <site site="goal_east_net_site_011"/>
+    </spatial>
+    <spatial name="goal_east_rope_016" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_007"/>
+      <site site="goal_east_net_site_008"/>
+    </spatial>
+    <spatial name="goal_east_rope_017" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_007"/>
+      <site site="goal_east_net_site_012"/>
+    </spatial>
+    <spatial name="goal_east_rope_018" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_008"/>
+      <site site="goal_east_net_site_009"/>
+    </spatial>
+    <spatial name="goal_east_rope_019" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_008"/>
+      <site site="goal_east_net_site_013"/>
+    </spatial>
+    <spatial name="goal_east_rope_020" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_009"/>
+      <site site="goal_east_net_site_014"/>
+    </spatial>
+    <spatial name="goal_east_rope_021" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_009"/>
+      <site site="goal_east_net_site_039"/>
+    </spatial>
+    <spatial name="goal_east_rope_022" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_010"/>
+      <site site="goal_east_net_site_011"/>
+    </spatial>
+    <spatial name="goal_east_rope_023" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_010"/>
+      <site site="goal_east_net_site_015"/>
+    </spatial>
+    <spatial name="goal_east_rope_024" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_010"/>
+      <site site="goal_east_net_site_035"/>
+    </spatial>
+    <spatial name="goal_east_rope_025" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_011"/>
+      <site site="goal_east_net_site_012"/>
+    </spatial>
+    <spatial name="goal_east_rope_026" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_011"/>
+      <site site="goal_east_net_site_016"/>
+    </spatial>
+    <spatial name="goal_east_rope_027" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_012"/>
+      <site site="goal_east_net_site_013"/>
+    </spatial>
+    <spatial name="goal_east_rope_028" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_012"/>
+      <site site="goal_east_net_site_017"/>
+    </spatial>
+    <spatial name="goal_east_rope_029" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_013"/>
+      <site site="goal_east_net_site_014"/>
+    </spatial>
+    <spatial name="goal_east_rope_030" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_013"/>
+      <site site="goal_east_net_site_018"/>
+    </spatial>
+    <spatial name="goal_east_rope_031" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_014"/>
+      <site site="goal_east_net_site_019"/>
+    </spatial>
+    <spatial name="goal_east_rope_032" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_014"/>
+      <site site="goal_east_net_site_041"/>
+    </spatial>
+    <spatial name="goal_east_rope_033" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_015"/>
+      <site site="goal_east_net_site_016"/>
+    </spatial>
+    <spatial name="goal_east_rope_034" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_015"/>
+      <site site="goal_east_net_site_025"/>
+    </spatial>
+    <spatial name="goal_east_rope_035" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_016"/>
+      <site site="goal_east_net_site_017"/>
+    </spatial>
+    <spatial name="goal_east_rope_036" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_016"/>
+      <site site="goal_east_net_site_026"/>
+    </spatial>
+    <spatial name="goal_east_rope_037" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_017"/>
+      <site site="goal_east_net_site_018"/>
+    </spatial>
+    <spatial name="goal_east_rope_038" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_017"/>
+      <site site="goal_east_net_site_027"/>
+    </spatial>
+    <spatial name="goal_east_rope_039" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_018"/>
+      <site site="goal_east_net_site_019"/>
+    </spatial>
+    <spatial name="goal_east_rope_040" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_018"/>
+      <site site="goal_east_net_site_028"/>
+    </spatial>
+    <spatial name="goal_east_rope_041" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_019"/>
+      <site site="goal_east_net_site_029"/>
+    </spatial>
+    <spatial name="goal_east_rope_042" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_020"/>
+      <site site="goal_east_net_site_021"/>
+    </spatial>
+    <spatial name="goal_east_rope_043" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_020"/>
+      <site site="goal_east_net_site_025"/>
+    </spatial>
+    <spatial name="goal_east_rope_044" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_020"/>
+      <site site="goal_east_net_site_034"/>
+    </spatial>
+    <spatial name="goal_east_rope_045" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_021"/>
+      <site site="goal_east_net_site_022"/>
+    </spatial>
+    <spatial name="goal_east_rope_046" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_021"/>
+      <site site="goal_east_net_site_026"/>
+    </spatial>
+    <spatial name="goal_east_rope_047" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_022"/>
+      <site site="goal_east_net_site_023"/>
+    </spatial>
+    <spatial name="goal_east_rope_048" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_022"/>
+      <site site="goal_east_net_site_027"/>
+    </spatial>
+    <spatial name="goal_east_rope_049" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_023"/>
+      <site site="goal_east_net_site_024"/>
+    </spatial>
+    <spatial name="goal_east_rope_050" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_023"/>
+      <site site="goal_east_net_site_028"/>
+    </spatial>
+    <spatial name="goal_east_rope_051" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_024"/>
+      <site site="goal_east_net_site_029"/>
+    </spatial>
+    <spatial name="goal_east_rope_052" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_024"/>
+      <site site="goal_east_net_site_040"/>
+    </spatial>
+    <spatial name="goal_east_rope_053" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_025"/>
+      <site site="goal_east_net_site_026"/>
+    </spatial>
+    <spatial name="goal_east_rope_054" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_025"/>
+      <site site="goal_east_net_site_035"/>
+    </spatial>
+    <spatial name="goal_east_rope_055" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_026"/>
+      <site site="goal_east_net_site_027"/>
+    </spatial>
+    <spatial name="goal_east_rope_056" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_027"/>
+      <site site="goal_east_net_site_028"/>
+    </spatial>
+    <spatial name="goal_east_rope_057" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_028"/>
+      <site site="goal_east_net_site_029"/>
+    </spatial>
+    <spatial name="goal_east_rope_058" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_029"/>
+      <site site="goal_east_net_site_041"/>
+    </spatial>
+    <spatial name="goal_east_rope_059" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_030"/>
+      <site site="goal_east_net_site_031"/>
+    </spatial>
+    <spatial name="goal_east_rope_060" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_030"/>
+      <site site="goal_east_net_site_032"/>
+    </spatial>
+    <spatial name="goal_east_rope_061" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_031"/>
+      <site site="goal_east_net_site_033"/>
+    </spatial>
+    <spatial name="goal_east_rope_062" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_032"/>
+      <site site="goal_east_net_site_033"/>
+    </spatial>
+    <spatial name="goal_east_rope_063" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_032"/>
+      <site site="goal_east_net_site_034"/>
+    </spatial>
+    <spatial name="goal_east_rope_064" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_033"/>
+      <site site="goal_east_net_site_035"/>
+    </spatial>
+    <spatial name="goal_east_rope_065" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_034"/>
+      <site site="goal_east_net_site_035"/>
+    </spatial>
+    <spatial name="goal_east_rope_066" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_036"/>
+      <site site="goal_east_net_site_037"/>
+    </spatial>
+    <spatial name="goal_east_rope_067" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_036"/>
+      <site site="goal_east_net_site_038"/>
+    </spatial>
+    <spatial name="goal_east_rope_068" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_037"/>
+      <site site="goal_east_net_site_039"/>
+    </spatial>
+    <spatial name="goal_east_rope_069" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_038"/>
+      <site site="goal_east_net_site_039"/>
+    </spatial>
+    <spatial name="goal_east_rope_070" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_038"/>
+      <site site="goal_east_net_site_040"/>
+    </spatial>
+    <spatial name="goal_east_rope_071" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_039"/>
+      <site site="goal_east_net_site_041"/>
+    </spatial>
+    <spatial name="goal_east_rope_072" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_east_net_site_040"/>
+      <site site="goal_east_net_site_041"/>
+    </spatial>
+    <spatial name="goal_west_rope_000" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_000"/>
+      <site site="goal_west_net_site_001"/>
+    </spatial>
+    <spatial name="goal_west_rope_001" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_000"/>
+      <site site="goal_west_net_site_005"/>
+    </spatial>
+    <spatial name="goal_west_rope_002" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_000"/>
+      <site site="goal_west_net_site_031"/>
+    </spatial>
+    <spatial name="goal_west_rope_003" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_001"/>
+      <site site="goal_west_net_site_002"/>
+    </spatial>
+    <spatial name="goal_west_rope_004" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_001"/>
+      <site site="goal_west_net_site_006"/>
+    </spatial>
+    <spatial name="goal_west_rope_005" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_002"/>
+      <site site="goal_west_net_site_003"/>
+    </spatial>
+    <spatial name="goal_west_rope_006" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_002"/>
+      <site site="goal_west_net_site_007"/>
+    </spatial>
+    <spatial name="goal_west_rope_007" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_003"/>
+      <site site="goal_west_net_site_004"/>
+    </spatial>
+    <spatial name="goal_west_rope_008" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_003"/>
+      <site site="goal_west_net_site_008"/>
+    </spatial>
+    <spatial name="goal_west_rope_009" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_004"/>
+      <site site="goal_west_net_site_009"/>
+    </spatial>
+    <spatial name="goal_west_rope_010" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_004"/>
+      <site site="goal_west_net_site_037"/>
+    </spatial>
+    <spatial name="goal_west_rope_011" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_005"/>
+      <site site="goal_west_net_site_006"/>
+    </spatial>
+    <spatial name="goal_west_rope_012" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_005"/>
+      <site site="goal_west_net_site_010"/>
+    </spatial>
+    <spatial name="goal_west_rope_013" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_005"/>
+      <site site="goal_west_net_site_033"/>
+    </spatial>
+    <spatial name="goal_west_rope_014" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_006"/>
+      <site site="goal_west_net_site_007"/>
+    </spatial>
+    <spatial name="goal_west_rope_015" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_006"/>
+      <site site="goal_west_net_site_011"/>
+    </spatial>
+    <spatial name="goal_west_rope_016" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_007"/>
+      <site site="goal_west_net_site_008"/>
+    </spatial>
+    <spatial name="goal_west_rope_017" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_007"/>
+      <site site="goal_west_net_site_012"/>
+    </spatial>
+    <spatial name="goal_west_rope_018" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_008"/>
+      <site site="goal_west_net_site_009"/>
+    </spatial>
+    <spatial name="goal_west_rope_019" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_008"/>
+      <site site="goal_west_net_site_013"/>
+    </spatial>
+    <spatial name="goal_west_rope_020" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_009"/>
+      <site site="goal_west_net_site_014"/>
+    </spatial>
+    <spatial name="goal_west_rope_021" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_009"/>
+      <site site="goal_west_net_site_039"/>
+    </spatial>
+    <spatial name="goal_west_rope_022" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_010"/>
+      <site site="goal_west_net_site_011"/>
+    </spatial>
+    <spatial name="goal_west_rope_023" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_010"/>
+      <site site="goal_west_net_site_015"/>
+    </spatial>
+    <spatial name="goal_west_rope_024" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_010"/>
+      <site site="goal_west_net_site_035"/>
+    </spatial>
+    <spatial name="goal_west_rope_025" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_011"/>
+      <site site="goal_west_net_site_012"/>
+    </spatial>
+    <spatial name="goal_west_rope_026" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_011"/>
+      <site site="goal_west_net_site_016"/>
+    </spatial>
+    <spatial name="goal_west_rope_027" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_012"/>
+      <site site="goal_west_net_site_013"/>
+    </spatial>
+    <spatial name="goal_west_rope_028" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_012"/>
+      <site site="goal_west_net_site_017"/>
+    </spatial>
+    <spatial name="goal_west_rope_029" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_013"/>
+      <site site="goal_west_net_site_014"/>
+    </spatial>
+    <spatial name="goal_west_rope_030" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_013"/>
+      <site site="goal_west_net_site_018"/>
+    </spatial>
+    <spatial name="goal_west_rope_031" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_014"/>
+      <site site="goal_west_net_site_019"/>
+    </spatial>
+    <spatial name="goal_west_rope_032" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_014"/>
+      <site site="goal_west_net_site_041"/>
+    </spatial>
+    <spatial name="goal_west_rope_033" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_015"/>
+      <site site="goal_west_net_site_016"/>
+    </spatial>
+    <spatial name="goal_west_rope_034" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_015"/>
+      <site site="goal_west_net_site_025"/>
+    </spatial>
+    <spatial name="goal_west_rope_035" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_016"/>
+      <site site="goal_west_net_site_017"/>
+    </spatial>
+    <spatial name="goal_west_rope_036" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_016"/>
+      <site site="goal_west_net_site_026"/>
+    </spatial>
+    <spatial name="goal_west_rope_037" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_017"/>
+      <site site="goal_west_net_site_018"/>
+    </spatial>
+    <spatial name="goal_west_rope_038" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_017"/>
+      <site site="goal_west_net_site_027"/>
+    </spatial>
+    <spatial name="goal_west_rope_039" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_018"/>
+      <site site="goal_west_net_site_019"/>
+    </spatial>
+    <spatial name="goal_west_rope_040" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_018"/>
+      <site site="goal_west_net_site_028"/>
+    </spatial>
+    <spatial name="goal_west_rope_041" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_019"/>
+      <site site="goal_west_net_site_029"/>
+    </spatial>
+    <spatial name="goal_west_rope_042" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_020"/>
+      <site site="goal_west_net_site_021"/>
+    </spatial>
+    <spatial name="goal_west_rope_043" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_020"/>
+      <site site="goal_west_net_site_025"/>
+    </spatial>
+    <spatial name="goal_west_rope_044" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_020"/>
+      <site site="goal_west_net_site_034"/>
+    </spatial>
+    <spatial name="goal_west_rope_045" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_021"/>
+      <site site="goal_west_net_site_022"/>
+    </spatial>
+    <spatial name="goal_west_rope_046" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_021"/>
+      <site site="goal_west_net_site_026"/>
+    </spatial>
+    <spatial name="goal_west_rope_047" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_022"/>
+      <site site="goal_west_net_site_023"/>
+    </spatial>
+    <spatial name="goal_west_rope_048" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_022"/>
+      <site site="goal_west_net_site_027"/>
+    </spatial>
+    <spatial name="goal_west_rope_049" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_023"/>
+      <site site="goal_west_net_site_024"/>
+    </spatial>
+    <spatial name="goal_west_rope_050" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_023"/>
+      <site site="goal_west_net_site_028"/>
+    </spatial>
+    <spatial name="goal_west_rope_051" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_024"/>
+      <site site="goal_west_net_site_029"/>
+    </spatial>
+    <spatial name="goal_west_rope_052" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_024"/>
+      <site site="goal_west_net_site_040"/>
+    </spatial>
+    <spatial name="goal_west_rope_053" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_025"/>
+      <site site="goal_west_net_site_026"/>
+    </spatial>
+    <spatial name="goal_west_rope_054" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_025"/>
+      <site site="goal_west_net_site_035"/>
+    </spatial>
+    <spatial name="goal_west_rope_055" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_026"/>
+      <site site="goal_west_net_site_027"/>
+    </spatial>
+    <spatial name="goal_west_rope_056" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_027"/>
+      <site site="goal_west_net_site_028"/>
+    </spatial>
+    <spatial name="goal_west_rope_057" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_028"/>
+      <site site="goal_west_net_site_029"/>
+    </spatial>
+    <spatial name="goal_west_rope_058" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_029"/>
+      <site site="goal_west_net_site_041"/>
+    </spatial>
+    <spatial name="goal_west_rope_059" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_030"/>
+      <site site="goal_west_net_site_031"/>
+    </spatial>
+    <spatial name="goal_west_rope_060" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_030"/>
+      <site site="goal_west_net_site_032"/>
+    </spatial>
+    <spatial name="goal_west_rope_061" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_031"/>
+      <site site="goal_west_net_site_033"/>
+    </spatial>
+    <spatial name="goal_west_rope_062" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_032"/>
+      <site site="goal_west_net_site_033"/>
+    </spatial>
+    <spatial name="goal_west_rope_063" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_032"/>
+      <site site="goal_west_net_site_034"/>
+    </spatial>
+    <spatial name="goal_west_rope_064" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_033"/>
+      <site site="goal_west_net_site_035"/>
+    </spatial>
+    <spatial name="goal_west_rope_065" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_034"/>
+      <site site="goal_west_net_site_035"/>
+    </spatial>
+    <spatial name="goal_west_rope_066" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_036"/>
+      <site site="goal_west_net_site_037"/>
+    </spatial>
+    <spatial name="goal_west_rope_067" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_036"/>
+      <site site="goal_west_net_site_038"/>
+    </spatial>
+    <spatial name="goal_west_rope_068" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_037"/>
+      <site site="goal_west_net_site_039"/>
+    </spatial>
+    <spatial name="goal_west_rope_069" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_038"/>
+      <site site="goal_west_net_site_039"/>
+    </spatial>
+    <spatial name="goal_west_rope_070" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_038"/>
+      <site site="goal_west_net_site_040"/>
+    </spatial>
+    <spatial name="goal_west_rope_071" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_039"/>
+      <site site="goal_west_net_site_041"/>
+    </spatial>
+    <spatial name="goal_west_rope_072" limited="false" width="0.0022" material="goal_rope" group="2">
+      <site site="goal_west_net_site_040"/>
+      <site site="goal_west_net_site_041"/>
+    </spatial>
+  </tendon>
+  <equality>
+    <flex name="goal_east_net_elasticity" flex="goal_east_net_surface" solref="0.035 0.90" solimp="0.60 0.95 0.002"/>
+    <flex name="goal_west_net_elasticity" flex="goal_west_net_surface" solref="0.035 0.90" solimp="0.60 0.95 0.002"/>
+  </equality>
+</mujoco>

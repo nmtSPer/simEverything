@@ -1,0 +1,18 @@
+<mujocoinclude>
+  <!-- Obstacle 7: Low crawl frame / tunnel -->
+  <!-- Move the complete obstacle by editing only body pos below. -->
+  <!-- Rotate it around Z by editing euler="0 0 yaw". -->
+  <body name="obstacle_07_crawl_frame" pos="41.500000 0.000000 0.000000" euler="0 0 0">
+    <geom name="crawl_side_L" type="mesh" mesh="crawl_side_L" pos="0.000000 -0.650000 0.280000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="crawl_side_R" type="mesh" mesh="crawl_side_R" pos="0.000000 0.650000 0.280000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="crawl_top_0" type="mesh" mesh="crawl_top_0" pos="-1.300000 0.000000 0.550000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="crawl_top_1" type="mesh" mesh="crawl_top_1" pos="-0.780000 0.000000 0.550000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="crawl_top_2" type="mesh" mesh="crawl_top_2" pos="-0.260000 0.000000 0.550000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="crawl_top_3" type="mesh" mesh="crawl_top_3" pos="0.260000 0.000000 0.550000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="crawl_top_4" type="mesh" mesh="crawl_top_4" pos="0.780000 0.000000 0.550000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="crawl_top_5" type="mesh" mesh="crawl_top_5" pos="1.300000 0.000000 0.550000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="crawl_long_0" type="mesh" mesh="crawl_long_0" pos="0.000000 -0.650000 0.550000" material="metal_gray" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="crawl_long_1" type="mesh" mesh="crawl_long_1" pos="0.000000 0.000000 0.550000" material="metal_gray" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="crawl_long_2" type="mesh" mesh="crawl_long_2" pos="0.000000 0.650000 0.550000" material="metal_gray" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+  </body>
+</mujocoinclude>

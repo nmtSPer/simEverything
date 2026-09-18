@@ -1,0 +1,31 @@
+<mujocoinclude>
+  <!-- Obstacle 5: S-shaped narrow balance path -->
+  <!-- Move the complete obstacle by editing only body pos below. -->
+  <!-- Rotate it around Z by editing euler="0 0 yaw". -->
+  <body name="obstacle_05_s_curve" pos="30.000000 0.000000 0.000000" euler="0 0 0">
+    <geom name="scurve_00" type="mesh" mesh="scurve_00" pos="-3.354167 -0.737222 0.065000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="scurve_01" type="mesh" mesh="scurve_01" pos="-3.062500 -0.686982 0.065000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="scurve_02" type="mesh" mesh="scurve_02" pos="-2.770833 -0.589925 0.065000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="scurve_03" type="mesh" mesh="scurve_03" pos="-2.479167 -0.452665 0.065000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="scurve_04" type="mesh" mesh="scurve_04" pos="-2.187500 -0.284557 0.065000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="scurve_05" type="mesh" mesh="scurve_05" pos="-1.895833 -0.097057 0.065000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="scurve_06" type="mesh" mesh="scurve_06" pos="-1.604167 0.097057 0.065000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="scurve_07" type="mesh" mesh="scurve_07" pos="-1.312500 0.284557 0.065000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="scurve_08" type="mesh" mesh="scurve_08" pos="-1.020833 0.452665 0.065000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="scurve_09" type="mesh" mesh="scurve_09" pos="-0.729167 0.589925 0.065000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="scurve_10" type="mesh" mesh="scurve_10" pos="-0.437500 0.686982 0.065000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="scurve_11" type="mesh" mesh="scurve_11" pos="-0.145833 0.737222 0.065000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="scurve_12" type="mesh" mesh="scurve_12" pos="0.145833 0.737222 0.065000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="scurve_13" type="mesh" mesh="scurve_13" pos="0.437500 0.686982 0.065000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="scurve_14" type="mesh" mesh="scurve_14" pos="0.729167 0.589925 0.065000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="scurve_15" type="mesh" mesh="scurve_15" pos="1.020833 0.452665 0.065000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="scurve_16" type="mesh" mesh="scurve_16" pos="1.312500 0.284557 0.065000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="scurve_17" type="mesh" mesh="scurve_17" pos="1.604167 0.097057 0.065000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="scurve_18" type="mesh" mesh="scurve_18" pos="1.895833 -0.097057 0.065000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="scurve_19" type="mesh" mesh="scurve_19" pos="2.187500 -0.284557 0.065000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="scurve_20" type="mesh" mesh="scurve_20" pos="2.479167 -0.452665 0.065000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="scurve_21" type="mesh" mesh="scurve_21" pos="2.770833 -0.589925 0.065000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="scurve_22" type="mesh" mesh="scurve_22" pos="3.062500 -0.686982 0.065000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="scurve_23" type="mesh" mesh="scurve_23" pos="3.354167 -0.737222 0.065000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+  </body>
+</mujocoinclude>

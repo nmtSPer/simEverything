@@ -1,0 +1,194 @@
+<mujoco model="wrc_t2_mesh_obstacle_course_modular">
+  <asset>
+    <texture name="skybox" type="skybox" builtin="gradient" rgb1="0.35 0.55 0.78" rgb2="0.75 0.85 0.95" width="512" height="3072"/>
+    <texture name="race_floor_tex" type="2d" file="assets/textures/race_floor.png"/>
+    <material name="race_blue" texture="race_floor_tex" texrepeat="1 1" texuniform="false" specular="0.02" shininess="0.02"/>
+    <material name="outer_floor" rgba="0.14 0.20 0.28 1" specular="0.01" shininess="0.01"/>
+    <material name="obs_yellow" rgba="0.96 0.73 0.06 1" specular="0.16" shininess="0.20"/>
+    <material name="obs_top" rgba="0.22 0.23 0.24 1" specular="0.08" shininess="0.12"/>
+    <material name="metal_gray" rgba="0.68 0.70 0.72 1" specular="0.25" shininess="0.35"/>
+    <mesh name="wave_col_00" file="assets/meshes/01_wave/wave_col_00.obj"/>
+    <mesh name="wave_col_01" file="assets/meshes/01_wave/wave_col_01.obj"/>
+    <mesh name="wave_col_02" file="assets/meshes/01_wave/wave_col_02.obj"/>
+    <mesh name="wave_col_03" file="assets/meshes/01_wave/wave_col_03.obj"/>
+    <mesh name="wave_col_04" file="assets/meshes/01_wave/wave_col_04.obj"/>
+    <mesh name="wave_col_05" file="assets/meshes/01_wave/wave_col_05.obj"/>
+    <mesh name="wave_col_06" file="assets/meshes/01_wave/wave_col_06.obj"/>
+    <mesh name="wave_col_07" file="assets/meshes/01_wave/wave_col_07.obj"/>
+    <mesh name="wave_col_08" file="assets/meshes/01_wave/wave_col_08.obj"/>
+    <mesh name="wave_col_09" file="assets/meshes/01_wave/wave_col_09.obj"/>
+    <mesh name="wave_col_10" file="assets/meshes/01_wave/wave_col_10.obj"/>
+    <mesh name="wave_col_11" file="assets/meshes/01_wave/wave_col_11.obj"/>
+    <mesh name="wave_col_12" file="assets/meshes/01_wave/wave_col_12.obj"/>
+    <mesh name="wave_col_13" file="assets/meshes/01_wave/wave_col_13.obj"/>
+    <mesh name="wave_col_14" file="assets/meshes/01_wave/wave_col_14.obj"/>
+    <mesh name="wave_col_15" file="assets/meshes/01_wave/wave_col_15.obj"/>
+    <mesh name="wave_side_L_00" file="assets/meshes/01_wave/wave_side_L_00.obj"/>
+    <mesh name="wave_side_L_01" file="assets/meshes/01_wave/wave_side_L_01.obj"/>
+    <mesh name="wave_side_L_02" file="assets/meshes/01_wave/wave_side_L_02.obj"/>
+    <mesh name="wave_side_L_03" file="assets/meshes/01_wave/wave_side_L_03.obj"/>
+    <mesh name="wave_side_L_04" file="assets/meshes/01_wave/wave_side_L_04.obj"/>
+    <mesh name="wave_side_L_05" file="assets/meshes/01_wave/wave_side_L_05.obj"/>
+    <mesh name="wave_side_L_06" file="assets/meshes/01_wave/wave_side_L_06.obj"/>
+    <mesh name="wave_side_L_07" file="assets/meshes/01_wave/wave_side_L_07.obj"/>
+    <mesh name="wave_side_L_08" file="assets/meshes/01_wave/wave_side_L_08.obj"/>
+    <mesh name="wave_side_L_09" file="assets/meshes/01_wave/wave_side_L_09.obj"/>
+    <mesh name="wave_side_L_10" file="assets/meshes/01_wave/wave_side_L_10.obj"/>
+    <mesh name="wave_side_L_11" file="assets/meshes/01_wave/wave_side_L_11.obj"/>
+    <mesh name="wave_side_L_12" file="assets/meshes/01_wave/wave_side_L_12.obj"/>
+    <mesh name="wave_side_L_13" file="assets/meshes/01_wave/wave_side_L_13.obj"/>
+    <mesh name="wave_side_L_14" file="assets/meshes/01_wave/wave_side_L_14.obj"/>
+    <mesh name="wave_side_L_15" file="assets/meshes/01_wave/wave_side_L_15.obj"/>
+    <mesh name="wave_side_R_00" file="assets/meshes/01_wave/wave_side_R_00.obj"/>
+    <mesh name="wave_side_R_01" file="assets/meshes/01_wave/wave_side_R_01.obj"/>
+    <mesh name="wave_side_R_02" file="assets/meshes/01_wave/wave_side_R_02.obj"/>
+    <mesh name="wave_side_R_03" file="assets/meshes/01_wave/wave_side_R_03.obj"/>
+    <mesh name="wave_side_R_04" file="assets/meshes/01_wave/wave_side_R_04.obj"/>
+    <mesh name="wave_side_R_05" file="assets/meshes/01_wave/wave_side_R_05.obj"/>
+    <mesh name="wave_side_R_06" file="assets/meshes/01_wave/wave_side_R_06.obj"/>
+    <mesh name="wave_side_R_07" file="assets/meshes/01_wave/wave_side_R_07.obj"/>
+    <mesh name="wave_side_R_08" file="assets/meshes/01_wave/wave_side_R_08.obj"/>
+    <mesh name="wave_side_R_09" file="assets/meshes/01_wave/wave_side_R_09.obj"/>
+    <mesh name="wave_side_R_10" file="assets/meshes/01_wave/wave_side_R_10.obj"/>
+    <mesh name="wave_side_R_11" file="assets/meshes/01_wave/wave_side_R_11.obj"/>
+    <mesh name="wave_side_R_12" file="assets/meshes/01_wave/wave_side_R_12.obj"/>
+    <mesh name="wave_side_R_13" file="assets/meshes/01_wave/wave_side_R_13.obj"/>
+    <mesh name="wave_side_R_14" file="assets/meshes/01_wave/wave_side_R_14.obj"/>
+    <mesh name="wave_side_R_15" file="assets/meshes/01_wave/wave_side_R_15.obj"/>
+    <mesh name="beam_0" file="assets/meshes/02_parallel_beams/beam_0.obj"/>
+    <mesh name="beam_0_in" file="assets/meshes/02_parallel_beams/beam_0_in.obj"/>
+    <mesh name="beam_0_out" file="assets/meshes/02_parallel_beams/beam_0_out.obj"/>
+    <mesh name="beam_1" file="assets/meshes/02_parallel_beams/beam_1.obj"/>
+    <mesh name="beam_1_in" file="assets/meshes/02_parallel_beams/beam_1_in.obj"/>
+    <mesh name="beam_1_out" file="assets/meshes/02_parallel_beams/beam_1_out.obj"/>
+    <mesh name="four_slope_0" file="assets/meshes/03_four_slopes/four_slope_0.obj"/>
+    <mesh name="four_slope_0_side_L" file="assets/meshes/03_four_slopes/four_slope_0_side_L.obj"/>
+    <mesh name="four_slope_0_side_R" file="assets/meshes/03_four_slopes/four_slope_0_side_R.obj"/>
+    <mesh name="four_slope_0_high_end" file="assets/meshes/03_four_slopes/four_slope_0_high_end.obj"/>
+    <mesh name="four_slope_1" file="assets/meshes/03_four_slopes/four_slope_1.obj"/>
+    <mesh name="four_slope_1_side_L" file="assets/meshes/03_four_slopes/four_slope_1_side_L.obj"/>
+    <mesh name="four_slope_1_side_R" file="assets/meshes/03_four_slopes/four_slope_1_side_R.obj"/>
+    <mesh name="four_slope_1_high_end" file="assets/meshes/03_four_slopes/four_slope_1_high_end.obj"/>
+    <mesh name="four_slope_2" file="assets/meshes/03_four_slopes/four_slope_2.obj"/>
+    <mesh name="four_slope_2_side_L" file="assets/meshes/03_four_slopes/four_slope_2_side_L.obj"/>
+    <mesh name="four_slope_2_side_R" file="assets/meshes/03_four_slopes/four_slope_2_side_R.obj"/>
+    <mesh name="four_slope_2_high_end" file="assets/meshes/03_four_slopes/four_slope_2_high_end.obj"/>
+    <mesh name="four_slope_3" file="assets/meshes/03_four_slopes/four_slope_3.obj"/>
+    <mesh name="four_slope_3_side_L" file="assets/meshes/03_four_slopes/four_slope_3_side_L.obj"/>
+    <mesh name="four_slope_3_side_R" file="assets/meshes/03_four_slopes/four_slope_3_side_R.obj"/>
+    <mesh name="four_slope_3_high_end" file="assets/meshes/03_four_slopes/four_slope_3_high_end.obj"/>
+    <mesh name="stair_platform_core" file="assets/meshes/04_stair_platform/stair_platform_core.obj"/>
+    <mesh name="stair_step_0" file="assets/meshes/04_stair_platform/stair_step_0.obj"/>
+    <mesh name="stair_step_1" file="assets/meshes/04_stair_platform/stair_step_1.obj"/>
+    <mesh name="stair_step_2" file="assets/meshes/04_stair_platform/stair_step_2.obj"/>
+    <mesh name="stair_step_3" file="assets/meshes/04_stair_platform/stair_step_3.obj"/>
+    <mesh name="stair_step_4" file="assets/meshes/04_stair_platform/stair_step_4.obj"/>
+    <mesh name="scurve_00" file="assets/meshes/05_s_curve/scurve_00.obj"/>
+    <mesh name="scurve_01" file="assets/meshes/05_s_curve/scurve_01.obj"/>
+    <mesh name="scurve_02" file="assets/meshes/05_s_curve/scurve_02.obj"/>
+    <mesh name="scurve_03" file="assets/meshes/05_s_curve/scurve_03.obj"/>
+    <mesh name="scurve_04" file="assets/meshes/05_s_curve/scurve_04.obj"/>
+    <mesh name="scurve_05" file="assets/meshes/05_s_curve/scurve_05.obj"/>
+    <mesh name="scurve_06" file="assets/meshes/05_s_curve/scurve_06.obj"/>
+    <mesh name="scurve_07" file="assets/meshes/05_s_curve/scurve_07.obj"/>
+    <mesh name="scurve_08" file="assets/meshes/05_s_curve/scurve_08.obj"/>
+    <mesh name="scurve_09" file="assets/meshes/05_s_curve/scurve_09.obj"/>
+    <mesh name="scurve_10" file="assets/meshes/05_s_curve/scurve_10.obj"/>
+    <mesh name="scurve_11" file="assets/meshes/05_s_curve/scurve_11.obj"/>
+    <mesh name="scurve_12" file="assets/meshes/05_s_curve/scurve_12.obj"/>
+    <mesh name="scurve_13" file="assets/meshes/05_s_curve/scurve_13.obj"/>
+    <mesh name="scurve_14" file="assets/meshes/05_s_curve/scurve_14.obj"/>
+    <mesh name="scurve_15" file="assets/meshes/05_s_curve/scurve_15.obj"/>
+    <mesh name="scurve_16" file="assets/meshes/05_s_curve/scurve_16.obj"/>
+    <mesh name="scurve_17" file="assets/meshes/05_s_curve/scurve_17.obj"/>
+    <mesh name="scurve_18" file="assets/meshes/05_s_curve/scurve_18.obj"/>
+    <mesh name="scurve_19" file="assets/meshes/05_s_curve/scurve_19.obj"/>
+    <mesh name="scurve_20" file="assets/meshes/05_s_curve/scurve_20.obj"/>
+    <mesh name="scurve_21" file="assets/meshes/05_s_curve/scurve_21.obj"/>
+    <mesh name="scurve_22" file="assets/meshes/05_s_curve/scurve_22.obj"/>
+    <mesh name="scurve_23" file="assets/meshes/05_s_curve/scurve_23.obj"/>
+    <mesh name="high_box" file="assets/meshes/06_high_box/high_box.obj"/>
+    <mesh name="crawl_side_L" file="assets/meshes/07_crawl_frame/crawl_side_L.obj"/>
+    <mesh name="crawl_side_R" file="assets/meshes/07_crawl_frame/crawl_side_R.obj"/>
+    <mesh name="crawl_top_0" file="assets/meshes/07_crawl_frame/crawl_top_0.obj"/>
+    <mesh name="crawl_top_1" file="assets/meshes/07_crawl_frame/crawl_top_1.obj"/>
+    <mesh name="crawl_top_2" file="assets/meshes/07_crawl_frame/crawl_top_2.obj"/>
+    <mesh name="crawl_top_3" file="assets/meshes/07_crawl_frame/crawl_top_3.obj"/>
+    <mesh name="crawl_top_4" file="assets/meshes/07_crawl_frame/crawl_top_4.obj"/>
+    <mesh name="crawl_top_5" file="assets/meshes/07_crawl_frame/crawl_top_5.obj"/>
+    <mesh name="crawl_long_0" file="assets/meshes/07_crawl_frame/crawl_long_0.obj"/>
+    <mesh name="crawl_long_1" file="assets/meshes/07_crawl_frame/crawl_long_1.obj"/>
+    <mesh name="crawl_long_2" file="assets/meshes/07_crawl_frame/crawl_long_2.obj"/>
+    <mesh name="slalom_base" file="assets/meshes/08_slalom/slalom_base.obj"/>
+    <mesh name="slalom_pole_0" file="assets/meshes/08_slalom/slalom_pole_0.obj"/>
+    <mesh name="slalom_pole_1" file="assets/meshes/08_slalom/slalom_pole_1.obj"/>
+    <mesh name="slalom_pole_2" file="assets/meshes/08_slalom/slalom_pole_2.obj"/>
+    <mesh name="slalom_pole_3" file="assets/meshes/08_slalom/slalom_pole_3.obj"/>
+    <mesh name="slalom_pole_4" file="assets/meshes/08_slalom/slalom_pole_4.obj"/>
+    <mesh name="window_long_base" file="assets/meshes/09_window_walkway/window_long_base.obj"/>
+    <mesh name="window_turn_ramp" file="assets/meshes/09_window_walkway/window_turn_ramp.obj"/>
+    <mesh name="window_end_step" file="assets/meshes/09_window_walkway/window_end_step.obj"/>
+    <mesh name="window_entry_step" file="assets/meshes/09_window_walkway/window_entry_step.obj"/>
+    <mesh name="window_long_lower_rail" file="assets/meshes/09_window_walkway/window_long_lower_rail.obj"/>
+    <mesh name="window_long_top_rail" file="assets/meshes/09_window_walkway/window_long_top_rail.obj"/>
+    <mesh name="window_long_post_00" file="assets/meshes/09_window_walkway/window_long_post_00.obj"/>
+    <mesh name="window_long_post_01" file="assets/meshes/09_window_walkway/window_long_post_01.obj"/>
+    <mesh name="window_long_post_02" file="assets/meshes/09_window_walkway/window_long_post_02.obj"/>
+    <mesh name="window_long_post_03" file="assets/meshes/09_window_walkway/window_long_post_03.obj"/>
+    <mesh name="window_long_post_04" file="assets/meshes/09_window_walkway/window_long_post_04.obj"/>
+    <mesh name="window_long_post_05" file="assets/meshes/09_window_walkway/window_long_post_05.obj"/>
+    <mesh name="window_long_post_06" file="assets/meshes/09_window_walkway/window_long_post_06.obj"/>
+    <mesh name="window_long_post_07" file="assets/meshes/09_window_walkway/window_long_post_07.obj"/>
+    <mesh name="window_long_post_08" file="assets/meshes/09_window_walkway/window_long_post_08.obj"/>
+    <mesh name="window_long_post_09" file="assets/meshes/09_window_walkway/window_long_post_09.obj"/>
+    <mesh name="window_long_post_10" file="assets/meshes/09_window_walkway/window_long_post_10.obj"/>
+    <mesh name="window_side_lower_rail" file="assets/meshes/09_window_walkway/window_side_lower_rail.obj"/>
+    <mesh name="window_side_top_rail" file="assets/meshes/09_window_walkway/window_side_top_rail.obj"/>
+    <mesh name="window_side_post_00" file="assets/meshes/09_window_walkway/window_side_post_00.obj"/>
+    <mesh name="window_side_post_01" file="assets/meshes/09_window_walkway/window_side_post_01.obj"/>
+    <mesh name="window_side_post_02" file="assets/meshes/09_window_walkway/window_side_post_02.obj"/>
+    <mesh name="window_side_post_03" file="assets/meshes/09_window_walkway/window_side_post_03.obj"/>
+    <mesh name="window_side_post_04" file="assets/meshes/09_window_walkway/window_side_post_04.obj"/>
+    <mesh name="window_side_post_05" file="assets/meshes/09_window_walkway/window_side_post_05.obj"/>
+    <mesh name="window_side_post_06" file="assets/meshes/09_window_walkway/window_side_post_06.obj"/>
+    <mesh name="window_side_end_post" file="assets/meshes/09_window_walkway/window_side_end_post.obj"/>
+    <mesh name="step_cyl_0" file="assets/meshes/10_stepping_cylinders/step_cyl_0.obj"/>
+    <mesh name="step_cyl_1" file="assets/meshes/10_stepping_cylinders/step_cyl_1.obj"/>
+    <mesh name="step_cyl_2" file="assets/meshes/10_stepping_cylinders/step_cyl_2.obj"/>
+    <mesh name="step_cyl_3" file="assets/meshes/10_stepping_cylinders/step_cyl_3.obj"/>
+    <mesh name="step_cyl_4" file="assets/meshes/10_stepping_cylinders/step_cyl_4.obj"/>
+    <mesh name="step_cyl_5" file="assets/meshes/10_stepping_cylinders/step_cyl_5.obj"/>
+    <mesh name="step_cyl_6" file="assets/meshes/10_stepping_cylinders/step_cyl_6.obj"/>
+    <mesh name="step_cyl_7" file="assets/meshes/10_stepping_cylinders/step_cyl_7.obj"/>
+    <mesh name="trench_side_L" file="assets/meshes/11_trench/trench_side_L.obj"/>
+    <mesh name="trench_side_R" file="assets/meshes/11_trench/trench_side_R.obj"/>
+    <mesh name="trench_center_floor" file="assets/meshes/11_trench/trench_center_floor.obj"/>
+    <mesh name="trench_in_step_0" file="assets/meshes/11_trench/trench_in_step_0.obj"/>
+    <mesh name="trench_in_step_1" file="assets/meshes/11_trench/trench_in_step_1.obj"/>
+    <mesh name="trench_in_step_2" file="assets/meshes/11_trench/trench_in_step_2.obj"/>
+    <mesh name="trench_in_step_3" file="assets/meshes/11_trench/trench_in_step_3.obj"/>
+    <mesh name="trench_out_step_0" file="assets/meshes/11_trench/trench_out_step_0.obj"/>
+    <mesh name="trench_out_step_1" file="assets/meshes/11_trench/trench_out_step_1.obj"/>
+    <mesh name="trench_out_step_2" file="assets/meshes/11_trench/trench_out_step_2.obj"/>
+    <mesh name="trench_out_step_3" file="assets/meshes/11_trench/trench_out_step_3.obj"/>
+  </asset>
+
+  <worldbody>
+    <light name="sun" pos="35 -25 35" dir="0 0 -1" directional="true" diffuse="0.95 0.93 0.88" castshadow="true"/>
+    <camera name="overview" pos="37 -32 18" xyaxes="1 0 0 0 0.48 0.88" fovy="52"/>
+    <camera name="top" pos="37 0 62" xyaxes="1 0 0 0 1 0" fovy="53"/>
+    <camera name="start_cam" pos="0 -7 3.8" xyaxes="1 0 0 0 0.30 0.954" fovy="62"/>
+    <camera name="finish_cam" pos="70 -7 4.0" xyaxes="1 0 0 0 0.30 0.954" fovy="62"/>
+
+    <!-- Infinite collision floor -->
+    <geom name="infinite_floor" type="plane" pos="0 0 0" size="0 0 0.1" material="outer_floor" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002"/>
+    <!-- Blue race surface is visual only -->
+    <geom name="race_floor_visual" type="plane" pos="37 0 0.001" size="39 4.5 0.1" material="race_blue" contype="0" conaffinity="0" group="2"/>
+
+    <!-- Every obstacle is defined in its own XML file. -->
+    <include file="obstacles/all_obstacles.xml"/>
+
+    <site name="start" pos="0 0 0.03" size="0.12" rgba="0.1 1 0.1 1"/>
+    <site name="finish" pos="71 0 0.03" size="0.12" rgba="1 0.1 0.1 1"/>
+  </worldbody>
+</mujoco>

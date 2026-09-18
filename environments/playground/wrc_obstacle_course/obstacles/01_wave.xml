@@ -1,0 +1,55 @@
+<mujocoinclude>
+  <!-- Obstacle 1: Wave / uneven terrain platform -->
+  <!-- Move the complete obstacle by editing only body pos below. -->
+  <!-- Rotate it around Z by editing euler="0 0 yaw". -->
+  <body name="obstacle_01_wave" pos="5.500000 0.000000 0.000000" euler="0 0 0">
+    <geom name="wave_col_00" type="mesh" mesh="wave_col_00" pos="-2.343750 0.000000 0.122361" material="obs_top" contype="1" conaffinity="1" condim="3" friction="1.00 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="wave_col_01" type="mesh" mesh="wave_col_01" pos="-2.031250 0.000000 0.151213" material="obs_top" contype="1" conaffinity="1" condim="3" friction="1.00 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="wave_col_02" type="mesh" mesh="wave_col_02" pos="-1.718750 0.000000 0.153875" material="obs_top" contype="1" conaffinity="1" condim="3" friction="1.00 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="wave_col_03" type="mesh" mesh="wave_col_03" pos="-1.406250 0.000000 0.153875" material="obs_top" contype="1" conaffinity="1" condim="3" friction="1.00 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="wave_col_04" type="mesh" mesh="wave_col_04" pos="-1.093750 0.000000 0.153875" material="obs_top" contype="1" conaffinity="1" condim="3" friction="1.00 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="wave_col_05" type="mesh" mesh="wave_col_05" pos="-0.781250 0.000000 0.153875" material="obs_top" contype="1" conaffinity="1" condim="3" friction="1.00 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="wave_col_06" type="mesh" mesh="wave_col_06" pos="-0.468750 0.000000 0.151213" material="obs_top" contype="1" conaffinity="1" condim="3" friction="1.00 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="wave_col_07" type="mesh" mesh="wave_col_07" pos="-0.156250 0.000000 0.122361" material="obs_top" contype="1" conaffinity="1" condim="3" friction="1.00 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="wave_col_08" type="mesh" mesh="wave_col_08" pos="0.156250 0.000000 0.080000" material="obs_top" contype="1" conaffinity="1" condim="3" friction="1.00 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="wave_col_09" type="mesh" mesh="wave_col_09" pos="0.468750 0.000000 0.108787" material="obs_top" contype="1" conaffinity="1" condim="3" friction="1.00 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="wave_col_10" type="mesh" mesh="wave_col_10" pos="0.781250 0.000000 0.176836" material="obs_top" contype="1" conaffinity="1" condim="3" friction="1.00 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="wave_col_11" type="mesh" mesh="wave_col_11" pos="1.093750 0.000000 0.210000" material="obs_top" contype="1" conaffinity="1" condim="3" friction="1.00 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="wave_col_12" type="mesh" mesh="wave_col_12" pos="1.406250 0.000000 0.210000" material="obs_top" contype="1" conaffinity="1" condim="3" friction="1.00 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="wave_col_13" type="mesh" mesh="wave_col_13" pos="1.718750 0.000000 0.176836" material="obs_top" contype="1" conaffinity="1" condim="3" friction="1.00 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="wave_col_14" type="mesh" mesh="wave_col_14" pos="2.031250 0.000000 0.108787" material="obs_top" contype="1" conaffinity="1" condim="3" friction="1.00 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="wave_col_15" type="mesh" mesh="wave_col_15" pos="2.343750 0.000000 0.080000" material="obs_top" contype="1" conaffinity="1" condim="3" friction="1.00 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="wave_side_L_00_visual" type="mesh" mesh="wave_side_L_00" pos="-2.343750 -0.915000 0.122361" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_L_01_visual" type="mesh" mesh="wave_side_L_01" pos="-2.031250 -0.915000 0.151213" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_L_02_visual" type="mesh" mesh="wave_side_L_02" pos="-1.718750 -0.915000 0.153875" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_L_03_visual" type="mesh" mesh="wave_side_L_03" pos="-1.406250 -0.915000 0.153875" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_L_04_visual" type="mesh" mesh="wave_side_L_04" pos="-1.093750 -0.915000 0.153875" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_L_05_visual" type="mesh" mesh="wave_side_L_05" pos="-0.781250 -0.915000 0.153875" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_L_06_visual" type="mesh" mesh="wave_side_L_06" pos="-0.468750 -0.915000 0.151213" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_L_07_visual" type="mesh" mesh="wave_side_L_07" pos="-0.156250 -0.915000 0.122361" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_L_08_visual" type="mesh" mesh="wave_side_L_08" pos="0.156250 -0.915000 0.080000" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_L_09_visual" type="mesh" mesh="wave_side_L_09" pos="0.468750 -0.915000 0.108787" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_L_10_visual" type="mesh" mesh="wave_side_L_10" pos="0.781250 -0.915000 0.176836" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_L_11_visual" type="mesh" mesh="wave_side_L_11" pos="1.093750 -0.915000 0.210000" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_L_12_visual" type="mesh" mesh="wave_side_L_12" pos="1.406250 -0.915000 0.210000" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_L_13_visual" type="mesh" mesh="wave_side_L_13" pos="1.718750 -0.915000 0.176836" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_L_14_visual" type="mesh" mesh="wave_side_L_14" pos="2.031250 -0.915000 0.108787" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_L_15_visual" type="mesh" mesh="wave_side_L_15" pos="2.343750 -0.915000 0.080000" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_R_00_visual" type="mesh" mesh="wave_side_R_00" pos="-2.343750 0.915000 0.122361" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_R_01_visual" type="mesh" mesh="wave_side_R_01" pos="-2.031250 0.915000 0.151213" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_R_02_visual" type="mesh" mesh="wave_side_R_02" pos="-1.718750 0.915000 0.153875" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_R_03_visual" type="mesh" mesh="wave_side_R_03" pos="-1.406250 0.915000 0.153875" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_R_04_visual" type="mesh" mesh="wave_side_R_04" pos="-1.093750 0.915000 0.153875" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_R_05_visual" type="mesh" mesh="wave_side_R_05" pos="-0.781250 0.915000 0.153875" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_R_06_visual" type="mesh" mesh="wave_side_R_06" pos="-0.468750 0.915000 0.151213" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_R_07_visual" type="mesh" mesh="wave_side_R_07" pos="-0.156250 0.915000 0.122361" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_R_08_visual" type="mesh" mesh="wave_side_R_08" pos="0.156250 0.915000 0.080000" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_R_09_visual" type="mesh" mesh="wave_side_R_09" pos="0.468750 0.915000 0.108787" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_R_10_visual" type="mesh" mesh="wave_side_R_10" pos="0.781250 0.915000 0.176836" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_R_11_visual" type="mesh" mesh="wave_side_R_11" pos="1.093750 0.915000 0.210000" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_R_12_visual" type="mesh" mesh="wave_side_R_12" pos="1.406250 0.915000 0.210000" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_R_13_visual" type="mesh" mesh="wave_side_R_13" pos="1.718750 0.915000 0.176836" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_R_14_visual" type="mesh" mesh="wave_side_R_14" pos="2.031250 0.915000 0.108787" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="wave_side_R_15_visual" type="mesh" mesh="wave_side_R_15" pos="2.343750 0.915000 0.080000" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+  </body>
+</mujocoinclude>

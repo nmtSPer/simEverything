@@ -1,0 +1,7 @@
+<mujoco model="slope_normal">
+  <worldbody>
+    <body name="slope_normal" pos="0 0 0" euler="0 0 0">
+      <geom pos="0.0 0.0 0.5" type="box" size="1.5 0.75 0.05" quat="0.968912421710645 0.0 -0.24740395925452296 0.0" />
+    </body>
+  </worldbody>
+</mujoco>

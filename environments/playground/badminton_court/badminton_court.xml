@@ -1,0 +1,42 @@
+<mujoco model="badminton_court_infinite_floor">
+  <asset>
+    <texture name="skybox" type="skybox" builtin="gradient" rgb1="0.18 0.22 0.28" rgb2="0.65 0.70 0.76" width="512" height="3072"/>
+    <texture name="court_tex" type="2d" file="assets/textures/badminton_court.png"/>
+    <texture name="net_tex" type="2d" file="assets/textures/badminton_net.png"/>
+    <material name="court_mat" texture="court_tex" texuniform="false" texrepeat="1 1" specular="0.03" shininess="0.04"/>
+    <material name="infinite_floor_mat" rgba="0.12 0.15 0.17 1" specular="0.02" shininess="0.02"/>
+    <material name="post_mat" rgba="0.18 0.18 0.19 1" specular="0.25" shininess="0.35"/>
+    <material name="net_mat" texture="net_tex" rgba="1 1 1 0.92" specular="0.02" shininess="0.02"/>
+  </asset>
+  <default>
+    <default class="net_collision">
+      <geom contype="1" conaffinity="1" condim="3" friction="0.25 0.003 0.0001" solref="0.015 1" solimp="0.88 0.97 0.0015"/>
+    </default>
+  </default>
+  <worldbody>
+    <light name="key_light" pos="0 -4 9" dir="0 0 -1" directional="true" diffuse="0.95 0.95 0.92" castshadow="true"/>
+    <light name="fill_light" pos="4 3 6" dir="-0.4 -0.2 -1" directional="true" diffuse="0.45 0.48 0.50"/>
+    <camera name="broadcast" pos="0 -10 5.0" xyaxes="1 0 0 0 0.40 0.9165" fovy="52"/>
+    <camera name="top" pos="0 0 15" xyaxes="1 0 0 0 1 0" fovy="48"/>
+    <camera name="sideline" pos="-1 -7 2.0" xyaxes="1 0 0 0 0.18 0.984" fovy="60"/>
+
+    <!-- PHYSICS FLOOR: MuJoCo plane collision is infinite. size="0 0 0.1" also makes the rendered floor visually extend without a finite court edge. -->
+    <geom name="infinite_floor" type="plane" pos="0 0 0" size="0 0 0.1" material="infinite_floor_mat" contype="1" conaffinity="1" condim="3" friction="0.85 0.02 0.0015"/>
+
+    <!-- VISUAL COURT ONLY. The physical contact still comes from infinite_floor. Keeping this plane non-colliding avoids duplicate contacts and thin-box penetration. Top view dimensions: 13.40 m x 6.10 m. -->
+    <geom name="badminton_court_visual" type="plane" pos="0 0 0.001" size="6.70 3.05 0.1" material="court_mat" contype="0" conaffinity="0" group="2"/>
+
+    <!-- Posts: placed on the doubles side lines, 1.55 m high. -->
+    <geom name="net_post_south" type="cylinder" fromto="0 -3.05 0  0 -3.05 1.55" size="0.020" material="post_mat" contype="1" conaffinity="1" condim="3"/>
+    <geom name="net_post_north" type="cylinder" fromto="0 3.05 0  0 3.05 1.55" size="0.020" material="post_mat" contype="1" conaffinity="1" condim="3"/>
+    <!-- Net: two thin halves approximate the official 26 mm sag from 1.55 m at each post to 1.524 m at court centre. Net depth = 0.760 m. It is contactable. -->
+    <body name="badminton_net">
+      <geom name="net_left_half" class="net_collision" type="box" pos="0 -1.525 1.157000" size="0.003 1.525 0.380" euler="-0.00852438 0 0" material="net_mat"/>
+      <geom name="net_right_half" class="net_collision" type="box" pos="0 1.525 1.157000" size="0.003 1.525 0.380" euler="0.00852438 0 0" material="net_mat"/>
+
+      <!-- White top cord/tape accent. -->
+      <geom name="net_top_left" type="capsule" fromto="0 -3.05 1.55  0 0 1.524" size="0.012" rgba="0.96 0.96 0.94 1" contype="0" conaffinity="0"/>
+      <geom name="net_top_right" type="capsule" fromto="0 0 1.524  0 3.05 1.55" size="0.012" rgba="0.96 0.96 0.94 1" contype="0" conaffinity="0"/>
+    </body>
+  </worldbody>
+</mujoco>

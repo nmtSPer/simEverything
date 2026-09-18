@@ -1,0 +1,13 @@
+<mujocoinclude>
+  <!-- Obstacle 4: Stair platform -->
+  <!-- Move the complete obstacle by editing only body pos below. -->
+  <!-- Rotate it around Z by editing euler="0 0 yaw". -->
+  <body name="obstacle_04_stair_platform" pos="23.000000 0.000000 0.000000" euler="0 0 0">
+    <geom name="stair_platform_core" type="mesh" mesh="stair_platform_core" pos="-0.700000 0.000000 0.550000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="stair_step_0" type="mesh" mesh="stair_step_0" pos="0.490000 0.000000 0.055000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="stair_step_1" type="mesh" mesh="stair_step_1" pos="0.770000 0.000000 0.110000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="stair_step_2" type="mesh" mesh="stair_step_2" pos="1.050000 0.000000 0.165000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="stair_step_3" type="mesh" mesh="stair_step_3" pos="1.330000 0.000000 0.220000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="stair_step_4" type="mesh" mesh="stair_step_4" pos="1.610000 0.000000 0.275000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+  </body>
+</mujocoinclude>

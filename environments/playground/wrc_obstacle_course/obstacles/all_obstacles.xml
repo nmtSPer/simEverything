@@ -1,0 +1,14 @@
+<mujocoinclude>
+  <!-- All WRC-style obstacle modules -->
+  <include file="01_wave.xml"/>
+  <include file="02_parallel_beams.xml"/>
+  <include file="03_four_slopes.xml"/>
+  <include file="04_stair_platform.xml"/>
+  <include file="05_s_curve.xml"/>
+  <include file="06_high_box.xml"/>
+  <include file="07_crawl_frame.xml"/>
+  <include file="08_slalom.xml"/>
+  <include file="09_window_walkway.xml"/>
+  <include file="10_stepping_cylinders.xml"/>
+  <include file="11_trench.xml"/>
+</mujocoinclude>

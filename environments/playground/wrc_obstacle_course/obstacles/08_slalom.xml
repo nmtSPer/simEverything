@@ -1,0 +1,13 @@
+<mujocoinclude>
+  <!-- Obstacle 8: Slalom poles -->
+  <!-- Move the complete obstacle by editing only body pos below. -->
+  <!-- Rotate it around Z by editing euler="0 0 yaw". -->
+  <body name="obstacle_08_slalom" pos="47.000000 0.000000 0.000000" euler="0 0 0">
+    <geom name="slalom_base" type="mesh" mesh="slalom_base" pos="0.000000 0.000000 0.035000" material="obs_yellow" contype="1" conaffinity="1" condim="3" friction="0.95 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="slalom_pole_0" type="mesh" mesh="slalom_pole_0" pos="-1.600000 0.220000 0.580000" material="metal_gray" contype="1" conaffinity="1" condim="3" friction="0.60 0.01 0.001" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="slalom_pole_1" type="mesh" mesh="slalom_pole_1" pos="-0.800000 -0.220000 0.580000" material="metal_gray" contype="1" conaffinity="1" condim="3" friction="0.60 0.01 0.001" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="slalom_pole_2" type="mesh" mesh="slalom_pole_2" pos="0.000000 0.220000 0.580000" material="metal_gray" contype="1" conaffinity="1" condim="3" friction="0.60 0.01 0.001" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="slalom_pole_3" type="mesh" mesh="slalom_pole_3" pos="0.800000 -0.220000 0.580000" material="metal_gray" contype="1" conaffinity="1" condim="3" friction="0.60 0.01 0.001" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="slalom_pole_4" type="mesh" mesh="slalom_pole_4" pos="1.600000 0.220000 0.580000" material="metal_gray" contype="1" conaffinity="1" condim="3" friction="0.60 0.01 0.001" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+  </body>
+</mujocoinclude>

@@ -1,0 +1,11 @@
+<mujoco model="rugged_floor">
+  <asset>
+    <hfield name="perlin_hfield" size="1.0 0.75 0.2 0.2" file="assets/height_field.png"/>
+  </asset>
+  <worldbody>
+    <geom type="hfield" hfield="perlin_hfield" pos="-1 -0.75 0.0" quat="1.0 0.0 0.0 0.0"/>
+    <geom type="hfield" hfield="perlin_hfield" pos="-1 0.75 0.0" quat="1.0 0.0 0.0 0.0"/>
+    <geom type="hfield" hfield="perlin_hfield" pos="1 -0.75 0.0" quat="1.0 0.0 0.0 0.0"/>
+    <geom type="hfield" hfield="perlin_hfield" pos="1 0.75 0.0" quat="1.0 0.0 0.0 0.0"/>
+  </worldbody>
+</mujoco>

@@ -1,0 +1,24 @@
+<mujoco model="common robot scene">
+  <compiler angle="radian"/>
+
+  fixed object:
+  <!-- <include file="fixed_object/slope_normal/slope_normal.xml"/> -->
+  <!-- <include file="fixed_object/stairs_normal/stairs_normal.xml"/> -->
+  <!-- <include file="fixed_object/stairs_suspend/stairs_suspend.xml"/> -->
+  <!-- <include file="fixed_object/unitree_path/unitree_path.xml"/> -->
+
+  rock:
+  <!-- <include file="rock/rocky_pathway.xml"/> -->
+  
+  floor:
+  <!-- <include file="floor/rough/rough_floor.xml"/> -->
+  <!-- <include file="floor/rugged/rugged_floor.xml"/> -->
+
+  playground:
+  <!-- <include file="playground/badminton_court/badminton_court.xml"/> -->
+  <!-- <include file="playground/soccer_court/mini_court/mini_court.xml"/> -->
+  <!-- <include file="playground/soccer_court/teenage_court/teenage_court.xml"/> -->
+  <!-- <include file="playground/soccer_court/normal_court/normal_court.xml"/> -->
+  <!-- <include file="playground/wrc_obstacle_course/wrc_obstacle_course.xml"/> -->
+
+</mujoco>

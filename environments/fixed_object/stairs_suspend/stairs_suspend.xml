@@ -1,0 +1,16 @@
+<mujoco model="stairs_suspend">
+  <worldbody>
+    <body name="stairs_suspend" pos="0 0 0" euler="0 0 0">
+      <geom pos="0.2 0.0 0.075" type="box" size="0.1 0.75 0.025" quat="1.0 0.0 0.0 0.0" contype="1" conaffinity="0"/>
+      <geom pos="0.4 0.0 0.225" type="box" size="0.1 0.75 0.025" quat="1.0 0.0 0.0 0.0" contype="1" conaffinity="0"/>
+      <geom pos="0.6 0.0 0.375" type="box" size="0.1 0.75 0.025" quat="1.0 0.0 0.0 0.0" contype="1" conaffinity="0"/>
+      <geom pos="0.8 0.0 0.525" type="box" size="0.1 0.75 0.025" quat="1.0 0.0 0.0 0.0" contype="1" conaffinity="0"/>
+      <geom pos="1.0 0.0 0.675" type="box" size="0.1 0.75 0.025" quat="1.0 0.0 0.0 0.0" contype="1" conaffinity="0"/>
+      <geom pos="1.2 0.0 0.825" type="box" size="0.1 0.75 0.025" quat="1.0 0.0 0.0 0.0" contype="1" conaffinity="0"/>
+      <geom pos="1.4 0.0 0.975" type="box" size="0.1 0.75 0.025" quat="1.0 0.0 0.0 0.0" contype="1" conaffinity="0"/>
+      <geom pos="1.6 0.0 1.125" type="box" size="0.1 0.75 0.025" quat="1.0 0.0 0.0 0.0" contype="1" conaffinity="0"/>
+      <geom pos="1.8 0.0 1.275" type="box" size="0.1 0.75 0.025" quat="1.0 0.0 0.0 0.0" contype="1" conaffinity="0"/>
+      <geom pos="2.0 0.0 1.425" type="box" size="0.1 0.75 0.025" quat="1.0 0.0 0.0 0.0" contype="1" conaffinity="0"/>
+    </body>
+  </worldbody>
+</mujoco>

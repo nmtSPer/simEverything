@@ -1,0 +1,23 @@
+<mujocoinclude>
+  <!-- Obstacle 3: Four side-by-side alternating slope ramps -->
+  <!-- Move the complete obstacle by editing only body pos below. -->
+  <!-- Rotate it around Z by editing euler="0 0 yaw". -->
+  <body name="obstacle_03_four_slopes" pos="17.800000 0.000000 0.000000" euler="0 0 1.5708">
+    <geom name="four_slope_0" type="mesh" mesh="four_slope_0" pos="0.000000 -1.065000 0.290000" material="obs_top" contype="1" conaffinity="1" condim="3" friction="1.00 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="four_slope_0_side_L_visual" type="mesh" mesh="four_slope_0_side_L" pos="0.000000 -1.398000 0.290000" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="four_slope_0_side_R_visual" type="mesh" mesh="four_slope_0_side_R" pos="0.000000 -0.732000 0.290000" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="four_slope_0_high_end_visual" type="mesh" mesh="four_slope_0_high_end" pos="-0.950000 -1.065000 0.290000" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="four_slope_1" type="mesh" mesh="four_slope_1" pos="0.000000 -0.355000 0.290000" material="obs_top" contype="1" conaffinity="1" condim="3" friction="1.00 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="four_slope_1_side_L_visual" type="mesh" mesh="four_slope_1_side_L" pos="0.000000 -0.688000 0.290000" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="four_slope_1_side_R_visual" type="mesh" mesh="four_slope_1_side_R" pos="0.000000 -0.022000 0.290000" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="four_slope_1_high_end_visual" type="mesh" mesh="four_slope_1_high_end" pos="0.950000 -0.355000 0.290000" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="four_slope_2" type="mesh" mesh="four_slope_2" pos="0.000000 0.355000 0.290000" material="obs_top" contype="1" conaffinity="1" condim="3" friction="1.00 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="four_slope_2_side_L_visual" type="mesh" mesh="four_slope_2_side_L" pos="0.000000 0.022000 0.290000" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="four_slope_2_side_R_visual" type="mesh" mesh="four_slope_2_side_R" pos="0.000000 0.688000 0.290000" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="four_slope_2_high_end_visual" type="mesh" mesh="four_slope_2_high_end" pos="-0.950000 0.355000 0.290000" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="four_slope_3" type="mesh" mesh="four_slope_3" pos="0.000000 1.065000 0.290000" material="obs_top" contype="1" conaffinity="1" condim="3" friction="1.00 0.02 0.002" group="1" solref="0.006 1" solimp="0.92 0.98 0.001"/>
+    <geom name="four_slope_3_side_L_visual" type="mesh" mesh="four_slope_3_side_L" pos="0.000000 0.732000 0.290000" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="four_slope_3_side_R_visual" type="mesh" mesh="four_slope_3_side_R" pos="0.000000 1.398000 0.290000" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+    <geom name="four_slope_3_high_end_visual" type="mesh" mesh="four_slope_3_high_end" pos="0.950000 1.065000 0.290000" material="obs_yellow" contype="0" conaffinity="0" group="2"/>
+  </body>
+</mujocoinclude>

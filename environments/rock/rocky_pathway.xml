@@ -1,0 +1,912 @@
+<mujoco model="walk_006_rocky_pathway">
+  <asset>
+    <!--Skybox, floor markers, and rock materials.-->
+    <material name="stone_gray" rgba="0.28 0.28 0.26 1" reflectance="0.002" specular="0.02" shininess="0.04"/>
+    <material name="stone_dark" rgba="0.18 0.18 0.17 1" reflectance="0.002" specular="0.015" shininess="0.03"/>
+    <material name="stone_brown" rgba="0.36 0.31 0.24 1" reflectance="0.002" specular="0.02" shininess="0.04"/>
+
+    <mesh name="rock_visual_mesh_003" file="assets/stone_proc_02.obj" scale="0.789 0.789 1.081"/>
+    <mesh name="rock_visual_mesh_005" file="assets/stone_proc_09.obj" scale="0.926 0.926 0.988"/>
+    <mesh name="rock_visual_mesh_017" file="assets/stone_proc_09.obj" scale="0.801 0.801 1.356"/>
+    <mesh name="rock_visual_mesh_020" file="assets/stone_proc_07.obj" scale="0.900 0.900 0.832"/>
+    <mesh name="rock_visual_mesh_025" file="assets/stone_proc_06.obj" scale="0.823 0.823 0.495"/>
+    <mesh name="rock_visual_mesh_029" file="assets/stone_proc_12.obj" scale="0.673 0.673 1.501"/>
+    <mesh name="rock_visual_mesh_032" file="assets/stone_proc_19.obj" scale="0.752 0.752 0.919"/>
+    <mesh name="rock_visual_mesh_035" file="assets/stone_proc_10.obj" scale="0.745 0.745 0.945"/>
+    <mesh name="rock_visual_mesh_039" file="assets/stone_proc_10.obj" scale="0.792 0.792 1.266"/>
+    <mesh name="rock_visual_mesh_052" file="assets/stone_proc_10.obj" scale="1.008 1.008 1.242"/>
+    <mesh name="rock_visual_mesh_059" file="assets/stone_proc_16.obj" scale="0.961 0.961 0.906"/>
+    <mesh name="rock_visual_mesh_072" file="assets/stone_proc_18.obj" scale="0.925 0.925 1.035"/>
+    <mesh name="rock_visual_mesh_074" file="assets/stone_proc_05.obj" scale="0.798 0.798 1.258"/>
+    <mesh name="rock_visual_mesh_076" file="assets/stone_proc_06.obj" scale="0.821 0.821 0.571"/>
+    <mesh name="rock_visual_mesh_078" file="assets/stone_proc_12.obj" scale="0.752 0.752 1.198"/>
+    <mesh name="rock_visual_mesh_082" file="assets/stone_proc_06.obj" scale="0.911 0.911 0.630"/>
+    <mesh name="rock_visual_mesh_084" file="assets/stone_proc_01.obj" scale="0.957 0.957 0.562"/>
+    <mesh name="rock_visual_mesh_085" file="assets/stone_proc_14.obj" scale="0.671 0.671 0.734"/>
+    <mesh name="rock_visual_mesh_088" file="assets/stone_proc_12.obj" scale="0.931 0.931 1.886"/>
+    <mesh name="rock_visual_mesh_090" file="assets/stone_proc_11.obj" scale="0.934 0.934 0.834"/>
+    <mesh name="rock_visual_mesh_111" file="assets/stone_proc_09.obj" scale="0.976 0.976 1.129"/>
+    <mesh name="rock_visual_mesh_123" file="assets/stone_proc_10.obj" scale="0.754 0.754 0.778"/>
+    <mesh name="rock_visual_mesh_128" file="assets/stone_proc_14.obj" scale="0.660 0.660 0.629"/>
+    <mesh name="rock_visual_mesh_131" file="assets/stone_proc_15.obj" scale="0.711 0.711 0.486"/>
+    <mesh name="rock_visual_mesh_143" file="assets/stone_proc_16.obj" scale="0.903 0.903 1.160"/>
+    <mesh name="rock_visual_mesh_146" file="assets/stone_proc_10.obj" scale="0.943 0.943 0.635"/>
+    <mesh name="rock_visual_mesh_152" file="assets/stone_proc_06.obj" scale="0.686 0.686 0.842"/>
+    <mesh name="rock_visual_mesh_156" file="assets/stone_proc_02.obj" scale="0.949 0.949 0.610"/>
+    <mesh name="rock_visual_mesh_159" file="assets/stone_proc_04.obj" scale="0.745 0.745 1.182"/>
+    <mesh name="rock_visual_mesh_167" file="assets/stone_proc_07.obj" scale="0.723 0.723 1.596"/>
+    <mesh name="rock_visual_mesh_172" file="assets/stone_proc_05.obj" scale="0.761 0.761 0.960"/>
+    <mesh name="rock_visual_mesh_179" file="assets/stone_proc_02.obj" scale="0.726 0.726 1.201"/>
+    <mesh name="rock_visual_mesh_184" file="assets/stone_proc_19.obj" scale="0.758 0.758 1.428"/>
+    <mesh name="rock_visual_mesh_185" file="assets/stone_proc_14.obj" scale="1.035 1.035 0.998"/>
+    <mesh name="rock_visual_mesh_186" file="assets/stone_proc_03.obj" scale="0.906 0.906 0.571"/>
+    <mesh name="rock_visual_mesh_200" file="assets/stone_proc_07.obj" scale="0.886 0.886 1.661"/>
+    <mesh name="rock_visual_mesh_203" file="assets/stone_proc_07.obj" scale="0.808 0.808 0.759"/>
+    <mesh name="rock_visual_mesh_204" file="assets/stone_proc_19.obj" scale="0.903 0.903 1.164"/>
+    <mesh name="rock_visual_mesh_210" file="assets/stone_proc_05.obj" scale="0.768 0.768 0.778"/>
+    <mesh name="rock_visual_mesh_216" file="assets/stone_proc_04.obj" scale="0.827 0.827 0.755"/>
+    <mesh name="rock_visual_mesh_226" file="assets/stone_proc_12.obj" scale="0.814 0.814 1.760"/>
+    <mesh name="rock_visual_mesh_238" file="assets/stone_proc_06.obj" scale="0.864 0.864 1.155"/>
+    <mesh name="rock_visual_mesh_239" file="assets/stone_proc_07.obj" scale="0.964 0.964 2.412"/>
+    <mesh name="rock_visual_mesh_249" file="assets/stone_proc_10.obj" scale="1.052 1.052 1.749"/>
+    <mesh name="rock_visual_mesh_253" file="assets/stone_proc_07.obj" scale="0.905 0.905 2.363"/>
+    <mesh name="rock_visual_mesh_259" file="assets/stone_proc_03.obj" scale="0.795 0.795 0.933"/>
+    <mesh name="rock_visual_mesh_261" file="assets/stone_proc_10.obj" scale="0.828 0.828 2.023"/>
+    <mesh name="rock_visual_mesh_274" file="assets/stone_proc_20.obj" scale="0.841 0.841 0.903"/>
+    <mesh name="rock_visual_mesh_278" file="assets/stone_proc_03.obj" scale="0.889 0.889 1.357"/>
+    <mesh name="rock_visual_mesh_284" file="assets/stone_proc_02.obj" scale="1.231 1.231 1.646"/>
+    <mesh name="rock_visual_mesh_289" file="assets/stone_proc_17.obj" scale="1.200 1.200 1.466"/>
+    <mesh name="rock_visual_mesh_301" file="assets/stone_proc_07.obj" scale="1.061 1.061 2.248"/>
+    <mesh name="rock_visual_mesh_310" file="assets/stone_proc_11.obj" scale="0.902 0.902 1.186"/>
+    <mesh name="rock_visual_mesh_313" file="assets/stone_proc_01.obj" scale="0.848 0.848 0.982"/>
+    <mesh name="rock_visual_mesh_314" file="assets/stone_proc_04.obj" scale="0.772 0.772 1.381"/>
+    <mesh name="rock_visual_mesh_321" file="assets/stone_proc_11.obj" scale="1.145 1.145 0.934"/>
+    <mesh name="rock_visual_mesh_323" file="assets/stone_proc_13.obj" scale="1.204 1.204 1.785"/>
+    <mesh name="rock_visual_mesh_325" file="assets/stone_proc_11.obj" scale="1.041 1.041 1.282"/>
+    <mesh name="rock_visual_mesh_327" file="assets/stone_proc_08.obj" scale="1.173 1.173 1.852"/>
+    <mesh name="rock_visual_mesh_338" file="assets/stone_proc_08.obj" scale="0.938 0.938 1.560"/>
+    <mesh name="rock_visual_mesh_345" file="assets/stone_proc_03.obj" scale="1.055 1.055 0.770"/>
+    <mesh name="rock_visual_mesh_348" file="assets/stone_proc_02.obj" scale="1.241 1.241 1.474"/>
+    <mesh name="rock_visual_mesh_351" file="assets/stone_proc_08.obj" scale="1.084 1.084 1.412"/>
+    <mesh name="rock_visual_mesh_356" file="assets/stone_proc_15.obj" scale="1.244 1.244 1.310"/>
+    <mesh name="rock_visual_mesh_362" file="assets/stone_proc_14.obj" scale="1.041 1.041 1.578"/>
+    <mesh name="rock_visual_mesh_370" file="assets/stone_proc_07.obj" scale="1.050 1.050 1.412"/>
+    <mesh name="rock_visual_mesh_383" file="assets/stone_proc_07.obj" scale="1.196 1.196 1.971"/>
+    <mesh name="rock_visual_mesh_390" file="assets/stone_proc_04.obj" scale="1.094 1.094 2.276"/>
+    <mesh name="rock_visual_mesh_396" file="assets/stone_proc_11.obj" scale="1.170 1.170 1.555"/>
+    <mesh name="rock_visual_mesh_403" file="assets/stone_proc_15.obj" scale="1.188 1.188 1.158"/>
+    <mesh name="rock_visual_mesh_407" file="assets/stone_proc_16.obj" scale="0.799 0.799 1.987"/>
+    <mesh name="rock_visual_mesh_410" file="assets/stone_proc_12.obj" scale="0.770 0.770 2.535"/>
+    <mesh name="rock_visual_mesh_414" file="assets/stone_proc_08.obj" scale="0.803 0.803 0.855"/>
+    <mesh name="rock_visual_mesh_415" file="assets/stone_proc_04.obj" scale="1.049 1.049 2.662"/>
+    <mesh name="rock_visual_mesh_420" file="assets/stone_proc_16.obj" scale="0.842 0.842 1.865"/>
+    <mesh name="rock_visual_mesh_428" file="assets/stone_proc_11.obj" scale="0.755 0.755 1.445"/>
+    <mesh name="rock_visual_mesh_436" file="assets/stone_proc_03.obj" scale="1.127 1.127 0.852"/>
+    <mesh name="rock_visual_mesh_448" file="assets/stone_proc_04.obj" scale="0.840 0.840 2.503"/>
+    <mesh name="rock_visual_mesh_452" file="assets/stone_proc_05.obj" scale="1.242 1.242 1.790"/>
+    <mesh name="rock_visual_mesh_459" file="assets/stone_proc_01.obj" scale="0.872 0.872 1.902"/>
+    <mesh name="rock_visual_mesh_461" file="assets/stone_proc_01.obj" scale="1.144 1.144 1.698"/>
+    <mesh name="rock_visual_mesh_463" file="assets/stone_proc_05.obj" scale="1.148 1.148 1.948"/>
+    <mesh name="rock_visual_mesh_471" file="assets/stone_proc_20.obj" scale="1.103 1.103 1.396"/>
+    <mesh name="rock_visual_mesh_475" file="assets/stone_proc_03.obj" scale="1.086 1.086 1.215"/>
+    <mesh name="rock_visual_mesh_477" file="assets/stone_proc_18.obj" scale="1.222 1.222 1.636"/>
+    <mesh name="rock_visual_mesh_492" file="assets/stone_proc_10.obj" scale="1.076 1.076 2.045"/>
+    <mesh name="rock_visual_mesh_496" file="assets/stone_proc_07.obj" scale="0.896 0.896 2.393"/>
+    <mesh name="rock_visual_mesh_502" file="assets/stone_proc_07.obj" scale="0.802 0.802 1.854"/>
+    <mesh name="rock_visual_mesh_508" file="assets/stone_proc_08.obj" scale="1.247 1.247 1.590"/>
+    <mesh name="rock_visual_mesh_514" file="assets/stone_proc_05.obj" scale="0.895 0.895 1.641"/>
+    <mesh name="rock_visual_mesh_517" file="assets/stone_proc_13.obj" scale="0.925 0.925 1.464"/>
+    <mesh name="rock_visual_mesh_522" file="assets/stone_proc_20.obj" scale="1.160 1.160 1.093"/>
+    <mesh name="rock_visual_mesh_525" file="assets/stone_proc_15.obj" scale="0.955 0.955 0.897"/>
+    <mesh name="rock_visual_mesh_529" file="assets/stone_proc_13.obj" scale="1.122 1.122 1.015"/>
+    <mesh name="rock_visual_mesh_539" file="assets/stone_proc_15.obj" scale="1.096 1.096 0.718"/>
+    <mesh name="rock_visual_mesh_543" file="assets/stone_proc_02.obj" scale="1.175 1.175 2.006"/>
+    <mesh name="rock_visual_mesh_550" file="assets/stone_proc_11.obj" scale="1.231 1.231 1.577"/>
+    <mesh name="rock_visual_mesh_553" file="assets/stone_proc_01.obj" scale="0.894 0.894 1.283"/>
+    <mesh name="rock_visual_mesh_565" file="assets/stone_proc_01.obj" scale="1.188 1.188 1.307"/>
+    <mesh name="rock_visual_mesh_567" file="assets/stone_proc_19.obj" scale="1.015 1.015 1.969"/>
+    <mesh name="rock_visual_mesh_579" file="assets/stone_proc_05.obj" scale="1.243 1.243 1.531"/>
+    <mesh name="rock_visual_mesh_586" file="assets/stone_proc_17.obj" scale="1.044 1.044 1.338"/>
+    <mesh name="rock_visual_mesh_590" file="assets/stone_proc_12.obj" scale="0.960 0.960 3.160"/>
+    <mesh name="rock_visual_mesh_591" file="assets/stone_proc_08.obj" scale="1.174 1.174 1.900"/>
+    <mesh name="rock_visual_mesh_603" file="assets/stone_proc_08.obj" scale="1.141 1.141 1.508"/>
+    <mesh name="rock_visual_mesh_605" file="assets/stone_proc_09.obj" scale="1.203 1.203 1.855"/>
+    <mesh name="rock_visual_mesh_607" file="assets/stone_proc_12.obj" scale="1.238 1.238 2.250"/>
+    <mesh name="rock_visual_mesh_610" file="assets/stone_proc_07.obj" scale="0.972 0.972 1.389"/>
+    <mesh name="rock_visual_mesh_616" file="assets/stone_proc_08.obj" scale="0.772 0.772 1.085"/>
+    <mesh name="rock_visual_mesh_630" file="assets/stone_proc_05.obj" scale="0.811 0.811 1.686"/>
+    <mesh name="rock_visual_mesh_644" file="assets/stone_proc_04.obj" scale="1.214 1.214 3.623"/>
+    <mesh name="rock_visual_mesh_649" file="assets/stone_proc_06.obj" scale="1.097 1.097 2.023"/>
+    <mesh name="rock_visual_mesh_651" file="assets/stone_proc_12.obj" scale="1.045 1.045 3.702"/>
+    <mesh name="rock_visual_mesh_657" file="assets/stone_proc_04.obj" scale="1.379 1.379 1.868"/>
+    <mesh name="rock_visual_mesh_663" file="assets/stone_proc_04.obj" scale="1.144 1.144 3.237"/>
+    <mesh name="rock_visual_mesh_666" file="assets/stone_proc_14.obj" scale="0.952 0.952 3.313"/>
+    <mesh name="rock_visual_mesh_673" file="assets/stone_proc_08.obj" scale="1.361 1.361 1.985"/>
+    <mesh name="rock_visual_mesh_676" file="assets/stone_proc_02.obj" scale="0.911 0.911 2.307"/>
+    <mesh name="rock_visual_mesh_678" file="assets/stone_proc_19.obj" scale="1.116 1.116 3.024"/>
+    <mesh name="rock_visual_mesh_679" file="assets/stone_proc_13.obj" scale="1.349 1.349 1.480"/>
+    <mesh name="rock_visual_mesh_690" file="assets/stone_proc_13.obj" scale="1.227 1.227 1.593"/>
+    <mesh name="rock_visual_mesh_694" file="assets/stone_proc_13.obj" scale="1.206 1.206 1.648"/>
+    <mesh name="rock_visual_mesh_713" file="assets/stone_proc_06.obj" scale="0.863 0.863 1.220"/>
+    <mesh name="rock_visual_mesh_714" file="assets/stone_proc_06.obj" scale="1.170 1.170 1.542"/>
+    <mesh name="rock_visual_mesh_715" file="assets/stone_proc_10.obj" scale="0.964 0.964 2.833"/>
+    <mesh name="rock_visual_mesh_719" file="assets/stone_proc_03.obj" scale="1.315 1.315 1.902"/>
+    <mesh name="rock_visual_mesh_723" file="assets/stone_proc_02.obj" scale="1.294 1.294 3.449"/>
+    <mesh name="rock_visual_mesh_725" file="assets/stone_proc_02.obj" scale="0.991 0.991 2.651"/>
+    <mesh name="rock_visual_mesh_726" file="assets/stone_proc_18.obj" scale="1.329 1.329 1.446"/>
+    <mesh name="rock_visual_mesh_746" file="assets/stone_proc_14.obj" scale="0.956 0.956 2.406"/>
+    <mesh name="rock_visual_mesh_751" file="assets/stone_proc_02.obj" scale="1.263 1.263 3.281"/>
+    <mesh name="rock_visual_mesh_758" file="assets/stone_proc_11.obj" scale="0.912 0.912 1.535"/>
+    <mesh name="rock_visual_mesh_762" file="assets/stone_proc_14.obj" scale="1.103 1.103 2.090"/>
+    <mesh name="rock_visual_mesh_764" file="assets/stone_proc_03.obj" scale="1.389 1.389 1.579"/>
+    <mesh name="rock_visual_mesh_768" file="assets/stone_proc_14.obj" scale="1.043 1.043 2.935"/>
+    <mesh name="rock_visual_mesh_788" file="assets/stone_proc_19.obj" scale="1.277 1.277 2.306"/>
+    <mesh name="rock_visual_mesh_789" file="assets/stone_proc_19.obj" scale="1.391 1.391 2.607"/>
+    <mesh name="rock_visual_mesh_793" file="assets/stone_proc_01.obj" scale="1.029 1.029 2.443"/>
+    <mesh name="rock_visual_mesh_795" file="assets/stone_proc_03.obj" scale="1.132 1.132 1.935"/>
+    <mesh name="rock_visual_mesh_800" file="assets/stone_proc_13.obj" scale="0.893 0.893 1.891"/>
+    <mesh name="rock_visual_mesh_805" file="assets/stone_proc_06.obj" scale="1.003 1.003 1.584"/>
+    <mesh name="rock_visual_mesh_811" file="assets/stone_proc_16.obj" scale="1.358 1.358 4.143"/>
+    <mesh name="rock_visual_mesh_818" file="assets/stone_proc_11.obj" scale="1.141 1.141 1.398"/>
+    <mesh name="rock_visual_mesh_826" file="assets/stone_proc_05.obj" scale="1.218 1.218 2.170"/>
+    <mesh name="rock_visual_mesh_831" file="assets/stone_proc_11.obj" scale="1.287 1.287 2.237"/>
+    <mesh name="rock_visual_mesh_832" file="assets/stone_proc_02.obj" scale="1.244 1.244 2.124"/>
+    <mesh name="rock_visual_mesh_834" file="assets/stone_proc_02.obj" scale="0.953 0.953 3.410"/>
+    <mesh name="rock_visual_mesh_836" file="assets/stone_proc_10.obj" scale="0.994 0.994 2.317"/>
+    <mesh name="rock_visual_mesh_839" file="assets/stone_proc_09.obj" scale="0.862 0.862 1.586"/>
+    <mesh name="rock_visual_mesh_843" file="assets/stone_proc_05.obj" scale="1.205 1.205 1.707"/>
+    </asset>
+  <worldbody>
+    <!--150 dynamic rocks sampled across the full pathway. Original poses and physical properties are preserved. Invisible ellipsoid proxies provide rock-rock, rock-floor, and rock-robot collisions.-->
+    <body name="rock_dynamic_003_body" pos="0.545892 -0.270317 0.011116" quat="0.93130405 -0.00895913 0.00751993 0.36405488">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_003" type="mesh" mesh="rock_visual_mesh_003" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_003" type="ellipsoid" size="0.0294 0.0291 0.0111" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0275"/>
+    </body>
+    <body name="rock_dynamic_005_body" pos="0.561202 -0.002619 0.010040" quat="0.83936975 -0.00643969 0.01525492 -0.54330860">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_005" type="mesh" mesh="rock_visual_mesh_005" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_005" type="ellipsoid" size="0.0428 0.0205 0.0100" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0268"/>
+    </body>
+    <body name="rock_dynamic_017_body" pos="0.600997 0.439338 0.019592" quat="0.83198553 -0.01611551 -0.00648724 -0.55452527">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_017" type="mesh" mesh="rock_visual_mesh_017" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_017" type="ellipsoid" size="0.0314 0.0291 0.0138" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0306"/>
+    </body>
+    <body name="rock_dynamic_020_body" pos="0.639626 -0.395553 0.008049" quat="0.85434956 -0.01359497 -0.00115742 0.51951965">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_020" type="mesh" mesh="rock_visual_mesh_020" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_020" type="ellipsoid" size="0.0348 0.0339 0.0080" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0274"/>
+    </body>
+    <body name="rock_dynamic_025_body" pos="0.639168 0.276886 0.008017" quat="0.85515046 0.00261043 0.00766600 -0.51831662">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_025" type="mesh" mesh="rock_visual_mesh_025" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_025" type="ellipsoid" size="0.0359 0.0213 0.0080" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0241"/>
+    </body>
+    <body name="rock_dynamic_029_body" pos="0.718425 -0.364769 0.011628" quat="0.95357262 -0.01530876 -0.00464532 -0.30073796">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_029" type="mesh" mesh="rock_visual_mesh_029" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_029" type="ellipsoid" size="0.0391 0.0218 0.0116" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0278"/>
+    </body>
+    <body name="rock_dynamic_032_body" pos="0.712929 -0.035507 0.008522" quat="0.99639615 -0.00301386 -0.00827714 -0.08436300">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_032" type="mesh" mesh="rock_visual_mesh_032" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_032" type="ellipsoid" size="0.0375 0.0271 0.0085" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0267"/>
+    </body>
+    <body name="rock_dynamic_035_body" pos="0.695107 0.440589 0.009609" quat="0.12774159 -0.00603102 0.00482380 -0.99177742">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_035" type="mesh" mesh="rock_visual_mesh_035" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_035" type="ellipsoid" size="0.0360 0.0271 0.0096" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0274"/>
+    </body>
+    <body name="rock_dynamic_039_body" pos="0.764637 -0.255901 0.012825" quat="0.25957366 -0.00514392 -0.01165546 0.96563927">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_039" type="mesh" mesh="rock_visual_mesh_039" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_039" type="ellipsoid" size="0.0318 0.0349 0.0128" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0322"/>
+    </body>
+    <body name="rock_dynamic_052_body" pos="0.830031 0.226257 0.014457" quat="0.93396907 -0.00211121 0.01925571 -0.35682843">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_052" type="mesh" mesh="rock_visual_mesh_052" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_052" type="ellipsoid" size="0.0348 0.0279 0.0126" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0302"/>
+    </body>
+    <body name="rock_dynamic_059_body" pos="0.848929 -0.001493 0.008013" quat="0.97854444 0.00828375 0.00012997 -0.20586924">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_059" type="mesh" mesh="rock_visual_mesh_059" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_059" type="ellipsoid" size="0.0383 0.0308 0.0080" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0274"/>
+    </body>
+    <body name="rock_dynamic_072_body" pos="0.917086 0.491007 0.013320" quat="0.03813623 -0.00004192 0.01613319 -0.99914231">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_072" type="mesh" mesh="rock_visual_mesh_072" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_072" type="ellipsoid" size="0.0303 0.0277 0.0133" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0291"/>
+    </body>
+    <body name="rock_dynamic_074_body" pos="0.958620 -0.409942 0.013518" quat="0.95553430 -0.00346150 0.01211912 0.29461049">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_074" type="mesh" mesh="rock_visual_mesh_074" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_074" type="ellipsoid" size="0.0323 0.0331 0.0135" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0324"/>
+    </body>
+    <body name="rock_dynamic_076_body" pos="0.962393 -0.145577 0.009228" quat="0.69421893 0.00240581 0.01376126 0.71962831">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_076" type="mesh" mesh="rock_visual_mesh_076" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_076" type="ellipsoid" size="0.0360 0.0236 0.0092" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0258"/>
+    </body>
+    <body name="rock_dynamic_078_body" pos="0.956210 0.135482 0.009362" quat="0.96628386 -0.01872815 -0.01439533 -0.25639331">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_078" type="mesh" mesh="rock_visual_mesh_078" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_078" type="ellipsoid" size="0.0420 0.0304 0.0092" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0298"/>
+    </body>
+    <body name="rock_dynamic_082_body" pos="1.019065 -0.560758 0.010215" quat="0.89648093 0.01139788 0.00332120 0.44292325">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_082" type="mesh" mesh="rock_visual_mesh_082" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_082" type="ellipsoid" size="0.0414 0.0264 0.0102" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0291"/>
+    </body>
+    <body name="rock_dynamic_084_body" pos="1.015082 -0.316103 0.008004" quat="0.49589017 -0.00145279 -0.00493613 -0.86837000">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_084" type="mesh" mesh="rock_visual_mesh_084" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_084" type="ellipsoid" size="0.0275 0.0347 0.0080" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0256"/>
+    </body>
+    <body name="rock_dynamic_085_body" pos="1.014263 -0.094497 0.008012" quat="0.03702915 -0.00569334 0.00345548 0.99929199">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_085" type="mesh" mesh="rock_visual_mesh_085" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_085" type="ellipsoid" size="0.0379 0.0301 0.0080" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0271"/>
+    </body>
+    <body name="rock_dynamic_088_body" pos="1.014547 0.226666 0.014592" quat="0.00176410 -0.01931943 -0.01566366 0.99968910">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_088" type="mesh" mesh="rock_visual_mesh_088" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_088" type="ellipsoid" size="0.0385 0.0326 0.0145" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0362"/>
+    </body>
+    <body name="rock_dynamic_090_body" pos="1.015264 0.497840 0.011336" quat="0.17368497 0.01570458 0.00337016 0.98467027">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_090" type="mesh" mesh="rock_visual_mesh_090" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_090" type="ellipsoid" size="0.0320 0.0238 0.0113" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0265"/>
+    </body>
+    <body name="rock_dynamic_111_body" pos="1.171569 -0.254279 0.011512" quat="0.03415605 0.00753475 0.00202819 -0.99938605">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_111" type="mesh" mesh="rock_visual_mesh_111" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_111" type="ellipsoid" size="0.0378 0.0312 0.0115" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0316"/>
+    </body>
+    <body name="rock_dynamic_123_body" pos="1.212750 0.165465 0.008018" quat="0.65362318 -0.00659421 -0.00406954 -0.75678048">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_123" type="mesh" mesh="rock_visual_mesh_123" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_123" type="ellipsoid" size="0.0374 0.0255 0.0080" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0256"/>
+    </body>
+    <body name="rock_dynamic_128_body" pos="1.270758 -0.409753 0.008021" quat="0.08863665 0.00868361 -0.00695894 0.99600186">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_128" type="mesh" mesh="rock_visual_mesh_128" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_128" type="ellipsoid" size="0.0273 0.0307 0.0080" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0247"/>
+    </body>
+    <body name="rock_dynamic_131_body" pos="1.287899 0.008195 0.008069" quat="0.60266083 0.00596285 0.01562710 0.79782214">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_131" type="mesh" mesh="rock_visual_mesh_131" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_131" type="ellipsoid" size="0.0357 0.0327 0.0080" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0273"/>
+    </body>
+    <body name="rock_dynamic_143_body" pos="1.332880 0.435168 0.009905" quat="0.69431423 -0.00649965 0.00085813 -0.71964211">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_143" type="mesh" mesh="rock_visual_mesh_143" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_143" type="ellipsoid" size="0.0409 0.0202 0.0099" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0262"/>
+    </body>
+    <body name="rock_dynamic_146_body" pos="1.368243 -0.409455 0.008029" quat="0.94226479 -0.00847934 -0.00877038 -0.33464646">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_146" type="mesh" mesh="rock_visual_mesh_146" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_146" type="ellipsoid" size="0.0287 0.0354 0.0080" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0261"/>
+    </body>
+    <body name="rock_dynamic_152_body" pos="1.381214 0.406308 0.013512" quat="0.97226708 0.01298073 -0.00033256 -0.23351254">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_152" type="mesh" mesh="rock_visual_mesh_152" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_152" type="ellipsoid" size="0.0335 0.0267 0.0135" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0301"/>
+    </body>
+    <body name="rock_dynamic_156_body" pos="1.428118 -0.317301 0.008020" quat="0.90691667 -0.01393168 -0.00129085 0.42107765">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_156" type="mesh" mesh="rock_visual_mesh_156" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_156" type="ellipsoid" size="0.0335 0.0209 0.0080" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0236"/>
+    </body>
+    <body name="rock_dynamic_159_body" pos="1.414764 0.169309 0.011117" quat="0.51547492 0.00246946 -0.00982490 0.85684478">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_159" type="mesh" mesh="rock_visual_mesh_159" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_159" type="ellipsoid" size="0.0386 0.0291 0.0111" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0305"/>
+    </body>
+    <body name="rock_dynamic_167_body" pos="1.490221 0.007493 0.013499" quat="0.91475975 -0.00048533 0.00282182 -0.40398813">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_167" type="mesh" mesh="rock_visual_mesh_167" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_167" type="ellipsoid" size="0.0296 0.0343 0.0135" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0317"/>
+    </body>
+    <body name="rock_dynamic_172_body" pos="1.552285 -0.564492 0.020612" quat="0.96357023 0.00992556 0.01436097 -0.26688509">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_172" type="mesh" mesh="rock_visual_mesh_172" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_172" type="ellipsoid" size="0.0418 0.0333 0.0103" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0324"/>
+    </body>
+    <body name="rock_dynamic_179_body" pos="1.526691 0.442262 0.012306" quat="0.73330051 0.00697183 -0.00344922 0.67986018">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_179" type="mesh" mesh="rock_visual_mesh_179" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_179" type="ellipsoid" size="0.0323 0.0235 0.0123" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0274"/>
+    </body>
+    <body name="rock_dynamic_184_body" pos="1.590445 -0.139049 0.013304" quat="0.30760569 -0.00752663 -0.00915799 0.95144008">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_184" type="mesh" mesh="rock_visual_mesh_184" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_184" type="ellipsoid" size="0.0314 0.0202 0.0133" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0264"/>
+    </body>
+    <body name="rock_dynamic_185_body" pos="1.585407 -0.002943 0.010303" quat="0.89124100 -0.00186225 -0.00525868 -0.45349571">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_185" type="mesh" mesh="rock_visual_mesh_185" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_185" type="ellipsoid" size="0.0295 0.0330 0.0103" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0280"/>
+    </body>
+    <body name="rock_dynamic_186_body" pos="1.593070 0.139030 0.008419" quat="0.99470107 0.00316695 -0.00929980 -0.10233898">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_186" type="mesh" mesh="rock_visual_mesh_186" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_186" type="ellipsoid" size="0.0322 0.0293 0.0084" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0259"/>
+    </body>
+    <body name="rock_dynamic_200_body" pos="1.691306 -0.407697 0.014001" quat="0.82509750 0.00360710 0.00314967 -0.56497007">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_200" type="mesh" mesh="rock_visual_mesh_200" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_200" type="ellipsoid" size="0.0303 0.0327 0.0140" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0319"/>
+    </body>
+    <body name="rock_dynamic_203_body" pos="1.681357 0.010826 0.008032" quat="0.89632314 0.00515543 -0.00970428 -0.44326524">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_203" type="mesh" mesh="rock_visual_mesh_203" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_203" type="ellipsoid" size="0.0412 0.0302 0.0080" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0280"/>
+    </body>
+    <body name="rock_dynamic_204_body" pos="1.714453 0.143135 0.010825" quat="0.22266312 -0.00920456 -0.00803336 -0.97481889">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_204" type="mesh" mesh="rock_visual_mesh_204" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_204" type="ellipsoid" size="0.0345 0.0297 0.0108" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0291"/>
+    </body>
+    <body name="rock_dynamic_210_body" pos="1.735165 -0.301905 0.008452" quat="0.99658224 0.00456011 0.01326023 0.08140766">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_210" type="mesh" mesh="rock_visual_mesh_210" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_210" type="ellipsoid" size="0.0353 0.0347 0.0084" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0283"/>
+    </body>
+    <body name="rock_dynamic_216_body" pos="1.734829 0.498780 0.008044" quat="0.96100916 0.00841970 -0.01129632 0.27615737">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_216" type="mesh" mesh="rock_visual_mesh_216" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_216" type="ellipsoid" size="0.0322 0.0256 0.0080" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0246"/>
+    </body>
+    <body name="rock_dynamic_226_body" pos="1.862631 -0.551791 0.013598" quat="0.85657182 0.00000035 -0.00093563 -0.51602697">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_226" type="mesh" mesh="rock_visual_mesh_226" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_226" type="ellipsoid" size="0.0458 0.0365 0.0136" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0406"/>
+    </body>
+    <body name="rock_dynamic_238_body" pos="1.902835 -0.149571 0.018610" quat="0.39795256 -0.00417255 -0.00680866 -0.91737124">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_238" type="mesh" mesh="rock_visual_mesh_238" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_238" type="ellipsoid" size="0.0496 0.0359 0.0186" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0511"/>
+    </body>
+    <body name="rock_dynamic_239_body" pos="1.906483 0.008644 0.020399" quat="0.96643905 -0.00033788 0.00368568 -0.25686935">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_239" type="mesh" mesh="rock_visual_mesh_239" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_239" type="ellipsoid" size="0.0355 0.0261 0.0204" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0369"/>
+    </body>
+    <body name="rock_dynamic_249_body" pos="1.959417 0.166573 0.017758" quat="0.52141910 0.01506176 0.00422178 -0.85315734">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_249" type="mesh" mesh="rock_visual_mesh_249" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_249" type="ellipsoid" size="0.0513 0.0266 0.0177" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0422"/>
+    </body>
+    <body name="rock_dynamic_253_body" pos="2.031910 -0.505411 0.029940" quat="0.93099542 0.01326791 0.01876446 -0.36430672">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_253" type="mesh" mesh="rock_visual_mesh_253" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_253" type="ellipsoid" size="0.0458 0.0252 0.0200" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0410"/>
+    </body>
+    <body name="rock_dynamic_259_body" pos="2.026128 0.267690 0.013751" quat="0.73731182 0.00969958 0.00752931 -0.67544097">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_259" type="mesh" mesh="rock_visual_mesh_259" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_259" type="ellipsoid" size="0.0522 0.0370 0.0137" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0443"/>
+    </body>
+    <body name="rock_dynamic_261_body" pos="1.983705 0.534104 0.020508" quat="0.56743069 0.00876947 0.00235850 -0.82337109">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_261" type="mesh" mesh="rock_visual_mesh_261" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_261" type="ellipsoid" size="0.0421 0.0329 0.0205" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0465"/>
+    </body>
+    <body name="rock_dynamic_274_body" pos="2.121513 -0.132239 0.015313" quat="0.62309605 -0.01335370 0.00741416 -0.78199618">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_274" type="mesh" mesh="rock_visual_mesh_274" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_274" type="ellipsoid" size="0.0441 0.0241 0.0153" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0342"/>
+    </body>
+    <body name="rock_dynamic_278_body" pos="2.109971 0.392513 0.019901" quat="0.07269602 0.00518512 0.00282872 -0.99733665">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_278" type="mesh" mesh="rock_visual_mesh_278" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_278" type="ellipsoid" size="0.0356 0.0405 0.0199" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0466"/>
+    </body>
+    <body name="rock_dynamic_284_body" pos="2.133770 -0.054048 0.032643" quat="0.80817896 -0.02450609 -0.02122356 0.58804403">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_284" type="mesh" mesh="rock_visual_mesh_284" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_284" type="ellipsoid" size="0.0534 0.0379 0.0169" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0522"/>
+    </body>
+    <body name="rock_dynamic_289_body" pos="2.188127 -0.532780 0.015194" quat="0.49826832 0.02304630 -0.00496075 -0.86670233">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_289" type="mesh" mesh="rock_visual_mesh_289" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_289" type="ellipsoid" size="0.0385 0.0402 0.0151" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0413"/>
+    </body>
+    <body name="rock_dynamic_301_body" pos="2.259506 -0.091602 0.019098" quat="0.07927720 -0.01800702 0.01768100 0.99653312">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_301" type="mesh" mesh="rock_visual_mesh_301" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_301" type="ellipsoid" size="0.0484 0.0342 0.0190" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0494"/>
+    </body>
+    <body name="rock_dynamic_310_body" pos="2.330300 -0.135317 0.016002" quat="0.99906932 0.00379887 0.00375815 0.04280113">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_310" type="mesh" mesh="rock_visual_mesh_310" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_310" type="ellipsoid" size="0.0477 0.0306 0.0160" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0414"/>
+    </body>
+    <body name="rock_dynamic_313_body" pos="2.331976 0.276763 0.011673" quat="0.80401823 -0.00261049 0.01664719 -0.59436583">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_313" type="mesh" mesh="rock_visual_mesh_313" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_313" type="ellipsoid" size="0.0419 0.0399 0.0116" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0374"/>
+    </body>
+    <body name="rock_dynamic_314_body" pos="2.318418 0.401449 0.013083" quat="0.98034921 -0.00038101 0.01792168 0.19645379">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_314" type="mesh" mesh="rock_visual_mesh_314" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_314" type="ellipsoid" size="0.0439 0.0365 0.0130" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0388"/>
+    </body>
+    <body name="rock_dynamic_321_body" pos="2.380776 0.172397 0.012620" quat="0.99754352 -0.00427109 0.01062046 -0.06910786">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_321" type="mesh" mesh="rock_visual_mesh_321" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_321" type="ellipsoid" size="0.0359 0.0314 0.0126" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0322"/>
+    </body>
+    <body name="rock_dynamic_323_body" pos="2.376891 0.447328 0.026131" quat="0.93130818 -0.00026925 0.00690854 0.36416654">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_323" type="mesh" mesh="rock_visual_mesh_323" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_323" type="ellipsoid" size="0.0393 0.0283 0.0212" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0416"/>
+    </body>
+    <body name="rock_dynamic_325_body" pos="2.435486 -0.531557 0.017315" quat="0.90136531 0.00969727 0.00010642 0.43295095">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_325" type="mesh" mesh="rock_visual_mesh_325" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_325" type="ellipsoid" size="0.0450 0.0451 0.0173" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0532"/>
+    </body>
+    <body name="rock_dynamic_327_body" pos="2.434274 -0.259387 0.024308" quat="0.36749874 0.00153251 -0.01692308 -0.92986877">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_327" type="mesh" mesh="rock_visual_mesh_327" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_327" type="ellipsoid" size="0.0412 0.0309 0.0243" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0490"/>
+    </body>
+    <body name="rock_dynamic_338_body" pos="2.460954 -0.008133 0.020501" quat="0.97683979 -0.00464115 0.00028935 -0.21392146">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_338" type="mesh" mesh="rock_visual_mesh_338" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_338" type="ellipsoid" size="0.0493 0.0395 0.0205" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0579"/>
+    </body>
+    <body name="rock_dynamic_345_body" pos="2.543450 -0.268503 0.011329" quat="0.20570328 0.00567003 0.00954253 -0.97855146">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_345" type="mesh" mesh="rock_visual_mesh_345" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_345" type="ellipsoid" size="0.0391 0.0402 0.0113" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0358"/>
+    </body>
+    <body name="rock_dynamic_348_body" pos="2.531218 0.131782 0.015109" quat="0.76203664 -0.00797380 0.00172574 0.64748251">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_348" type="mesh" mesh="rock_visual_mesh_348" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_348" type="ellipsoid" size="0.0387 0.0434 0.0151" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0434"/>
+    </body>
+    <body name="rock_dynamic_351_body" pos="2.525798 0.559815 0.018507" quat="0.29192454 0.00668911 -0.00757490 -0.95638797">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_351" type="mesh" mesh="rock_visual_mesh_351" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_351" type="ellipsoid" size="0.0367 0.0342 0.0185" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0412"/>
+    </body>
+    <body name="rock_dynamic_356_body" pos="2.581706 -0.052102 0.020404" quat="0.99131210 -0.00008435 -0.00742342 -0.13132099">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_356" type="mesh" mesh="rock_visual_mesh_356" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_356" type="ellipsoid" size="0.0412 0.0332 0.0204" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0459"/>
+    </body>
+    <body name="rock_dynamic_362_body" pos="2.644614 -0.406212 0.016212" quat="0.78645063 -0.00907549 -0.00391066 -0.61757409">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_362" type="mesh" mesh="rock_visual_mesh_362" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_362" type="ellipsoid" size="0.0401 0.0360 0.0162" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0414"/>
+    </body>
+    <body name="rock_dynamic_370_body" pos="2.698270 -0.564949 0.011924" quat="0.98530028 -0.00930226 -0.00535407 -0.17049389">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_370" type="mesh" mesh="rock_visual_mesh_370" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_370" type="ellipsoid" size="0.0453 0.0331 0.0119" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0359"/>
+    </body>
+    <body name="rock_dynamic_383_body" pos="2.734607 0.000214 0.016625" quat="0.24805963 0.01173301 0.01163174 -0.96860387">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_383" type="mesh" mesh="rock_visual_mesh_383" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_383" type="ellipsoid" size="0.0345 0.0323 0.0166" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0366"/>
+    </body>
+    <body name="rock_dynamic_390_body" pos="2.784472 -0.318884 0.021426" quat="0.81797447 0.01019885 0.01374579 -0.57499983">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_390" type="mesh" mesh="rock_visual_mesh_390" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_390" type="ellipsoid" size="0.0389 0.0450 0.0214" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0554"/>
+    </body>
+    <body name="rock_dynamic_396_body" pos="2.807832 0.492434 0.033226" quat="0.79467466 -0.00951044 0.02146019 0.60658157">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_396" type="mesh" mesh="rock_visual_mesh_396" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_396" type="ellipsoid" size="0.0423 0.0436 0.0210" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0567"/>
+    </body>
+    <body name="rock_dynamic_403_body" pos="2.820511 0.281216 0.018032" quat="0.38046975 -0.00812208 -0.01119022 0.92468999">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_403" type="mesh" mesh="rock_visual_mesh_403" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_403" type="ellipsoid" size="0.0339 0.0445 0.0180" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0453"/>
+    </body>
+    <body name="rock_dynamic_407_body" pos="2.904980 -0.356275 0.017003" quat="0.49382780 -0.00279376 -0.00818013 0.86951675">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_407" type="mesh" mesh="rock_visual_mesh_407" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_407" type="ellipsoid" size="0.0352 0.0301 0.0170" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0360"/>
+    </body>
+    <body name="rock_dynamic_410_body" pos="2.872265 -0.046152 0.028311" quat="0.73193510 0.00608771 0.01663145 -0.68114414">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_410" type="mesh" mesh="rock_visual_mesh_410" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_410" type="ellipsoid" size="0.0390 0.0395 0.0195" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0481"/>
+    </body>
+    <body name="rock_dynamic_414_body" pos="2.891253 0.501906 0.011251" quat="0.99555669 0.00642886 0.01108769 -0.09328780">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_414" type="mesh" mesh="rock_visual_mesh_414" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_414" type="ellipsoid" size="0.0455 0.0368 0.0112" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0368"/>
+    </body>
+    <body name="rock_dynamic_415_body" pos="2.943135 -0.501671 0.035484" quat="0.72260669 -0.01457975 0.00173262 0.69110346">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_415" type="mesh" mesh="rock_visual_mesh_415" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_415" type="ellipsoid" size="0.0445 0.0296 0.0250" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0510"/>
+    </body>
+    <body name="rock_dynamic_420_body" pos="2.947371 0.128884 0.015942" quat="0.38650534 -0.01627024 0.00459178 -0.92213221">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_420" type="mesh" mesh="rock_visual_mesh_420" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_420" type="ellipsoid" size="0.0399 0.0355 0.0159" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0405"/>
+    </body>
+    <body name="rock_dynamic_428_body" pos="3.010534 -0.041459 0.034114" quat="0.86072941 0.00405900 -0.01120180 -0.50892331">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_428" type="mesh" mesh="rock_visual_mesh_428" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_428" type="ellipsoid" size="0.0541 0.0287 0.0195" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0483"/>
+    </body>
+    <body name="rock_dynamic_436_body" pos="3.051516 -0.146085 0.012511" quat="0.84763522 -0.00319967 -0.00648003 -0.53053021">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_436" type="mesh" mesh="rock_visual_mesh_436" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_436" type="ellipsoid" size="0.0419 0.0347 0.0125" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0361"/>
+    </body>
+    <body name="rock_dynamic_448_body" pos="3.124501 0.246899 0.023627" quat="0.99912732 -0.03290453 0.02231510 0.01280312">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_448" type="mesh" mesh="rock_visual_mesh_448" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_448" type="ellipsoid" size="0.0427 0.0371 0.0235" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0552"/>
+    </body>
+    <body name="rock_dynamic_452_body" pos="3.161305 -0.436851 0.019207" quat="0.47303740 0.00781604 0.00471613 0.88099505">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_452" type="mesh" mesh="rock_visual_mesh_452" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_452" type="ellipsoid" size="0.0479 0.0328 0.0192" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0482"/>
+    </body>
+    <body name="rock_dynamic_459_body" pos="3.156129 0.548499 0.022507" quat="0.97595736 -0.01642102 0.00443425 0.21729684">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_459" type="mesh" mesh="rock_visual_mesh_459" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_459" type="ellipsoid" size="0.0413 0.0246 0.0225" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0408"/>
+    </body>
+    <body name="rock_dynamic_461_body" pos="3.213649 -0.379889 0.020107" quat="0.83296808 0.00341243 0.00993410 0.55322134">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_461" type="mesh" mesh="rock_visual_mesh_461" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_461" type="ellipsoid" size="0.0426 0.0294 0.0201" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0431"/>
+    </body>
+    <body name="rock_dynamic_463_body" pos="3.202372 -0.091911 0.020904" quat="0.36675107 0.00480983 -0.00561493 -0.93028974">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_463" type="mesh" mesh="rock_visual_mesh_463" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_463" type="ellipsoid" size="0.0357 0.0408 0.0209" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0485"/>
+    </body>
+    <body name="rock_dynamic_471_body" pos="3.275220 -0.242858 0.023797" quat="0.87384348 -0.01028450 0.02322295 0.48554351">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_471" type="mesh" mesh="rock_visual_mesh_471" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_471" type="ellipsoid" size="0.0489 0.0407 0.0237" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0651"/>
+    </body>
+    <body name="rock_dynamic_475_body" pos="3.265220 0.291907 0.017841" quat="0.87771560 -0.00810057 0.01910433 -0.47873241">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_475" type="mesh" mesh="rock_visual_mesh_475" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_475" type="ellipsoid" size="0.0474 0.0245 0.0178" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0386"/>
+    </body>
+    <body name="rock_dynamic_477_body" pos="3.239292 0.558844 0.027639" quat="0.93519195 -0.00785451 -0.02277032 -0.35332116">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_477" type="mesh" mesh="rock_visual_mesh_477" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_477" type="ellipsoid" size="0.0483 0.0356 0.0210" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0541"/>
+    </body>
+    <body name="rock_dynamic_492_body" pos="3.389743 0.096182 0.021211" quat="0.81150784 0.03291760 0.03390843 -0.58242741">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_492" type="mesh" mesh="rock_visual_mesh_492" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_492" type="ellipsoid" size="0.0537 0.0315 0.0207" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0532"/>
+    </body>
+    <body name="rock_dynamic_496_body" pos="3.439373 -0.543740 0.020205" quat="0.49809688 0.00889814 0.01195638 0.86699329">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_496" type="mesh" mesh="rock_visual_mesh_496" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_496" type="ellipsoid" size="0.0544 0.0268 0.0202" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0475"/>
+    </body>
+    <body name="rock_dynamic_502_body" pos="3.410028 0.236481 0.022005" quat="0.86591437 -0.01402648 -0.00053791 0.49999527">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_502" type="mesh" mesh="rock_visual_mesh_502" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_502" type="ellipsoid" size="0.0324 0.0269 0.0157" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0316"/>
+    </body>
+    <body name="rock_dynamic_508_body" pos="3.476038 -0.161984 0.020955" quat="0.52787507 0.00265979 -0.02097060 0.84905893">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_508" type="mesh" mesh="rock_visual_mesh_508" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_508" type="ellipsoid" size="0.0354 0.0458 0.0209" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0519"/>
+    </body>
+    <body name="rock_dynamic_514_body" pos="3.529447 -0.558726 0.017641" quat="0.98282282 -0.01745190 -0.00466686 -0.18366535">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_514" type="mesh" mesh="rock_visual_mesh_514" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_514" type="ellipsoid" size="0.0339 0.0393 0.0176" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0415"/>
+    </body>
+    <body name="rock_dynamic_517_body" pos="3.507335 -0.086581 0.017402" quat="0.97550119 -0.00231553 0.00448085 -0.21993633">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_517" type="mesh" mesh="rock_visual_mesh_517" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_517" type="ellipsoid" size="0.0454 0.0414 0.0174" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0507"/>
+    </body>
+    <body name="rock_dynamic_522_body" pos="3.491020 0.513529 0.026481" quat="0.74147446 0.00347601 -0.00002147 0.67097208">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_522" type="mesh" mesh="rock_visual_mesh_522" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_522" type="ellipsoid" size="0.0321 0.0400 0.0185" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0418"/>
+    </body>
+    <body name="rock_dynamic_525_body" pos="3.565213 -0.268208 0.014009" quat="0.73937800 -0.00761127 -0.00219285 -0.67324396">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_525" type="mesh" mesh="rock_visual_mesh_525" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_525" type="ellipsoid" size="0.0385 0.0378 0.0140" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0383"/>
+    </body>
+    <body name="rock_dynamic_529_body" pos="3.586637 0.273231 0.012004" quat="0.90646946 -0.00522455 0.00076932 -0.42223837">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_529" type="mesh" mesh="rock_visual_mesh_529" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_529" type="ellipsoid" size="0.0408 0.0399 0.0120" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0376"/>
+    </body>
+    <body name="rock_dynamic_539_body" pos="3.620413 0.445568 0.011239" quat="0.78593151 -0.01503012 0.00294314 -0.61812385">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_539" type="mesh" mesh="rock_visual_mesh_539" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_539" type="ellipsoid" size="0.0540 0.0254 0.0112" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0333"/>
+    </body>
+    <body name="rock_dynamic_543_body" pos="3.674416 -0.258830 0.020614" quat="0.69737500 0.01158149 -0.00175152 -0.71661071">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_543" type="mesh" mesh="rock_visual_mesh_543" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_543" type="ellipsoid" size="0.0496 0.0343 0.0206" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0530"/>
+    </body>
+    <body name="rock_dynamic_550_body" pos="3.731477 -0.564997 0.041839" quat="0.38211982 0.00584560 0.01991854 -0.92387961">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_550" type="mesh" mesh="rock_visual_mesh_550" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_550" type="ellipsoid" size="0.0361 0.0348 0.0213" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0448"/>
+    </body>
+    <body name="rock_dynamic_553_body" pos="3.728629 -0.096753 0.015173" quat="0.66715939 -0.01376755 -0.00992566 -0.74472162">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_553" type="mesh" mesh="rock_visual_mesh_553" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_553" type="ellipsoid" size="0.0473 0.0249 0.0151" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0359"/>
+    </body>
+    <body name="rock_dynamic_565_body" pos="3.771056 0.274013 0.015412" quat="0.08520567 -0.00906393 -0.00417606 0.99631340">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_565" type="mesh" mesh="rock_visual_mesh_565" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_565" type="ellipsoid" size="0.0398 0.0254 0.0154" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0336"/>
+    </body>
+    <body name="rock_dynamic_567_body" pos="3.797583 0.567544 0.018313" quat="0.18827059 0.00268290 -0.01789913 -0.98195041">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_567" type="mesh" mesh="rock_visual_mesh_567" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_567" type="ellipsoid" size="0.0460 0.0276 0.0183" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0412"/>
+    </body>
+    <body name="rock_dynamic_579_body" pos="3.882655 -0.233647 0.016498" quat="0.93755066 -0.00175994 0.00281009 0.34783296">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_579" type="mesh" mesh="rock_visual_mesh_579" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_579" type="ellipsoid" size="0.0342 0.0260 0.0165" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0326"/>
+    </body>
+    <body name="rock_dynamic_586_body" pos="3.950007 -0.548894 0.013925" quat="0.45115966 -0.01971567 -0.00582939 -0.89220641">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_586" type="mesh" mesh="rock_visual_mesh_586" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_586" type="ellipsoid" size="0.0479 0.0458 0.0138" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0482"/>
+    </body>
+    <body name="rock_dynamic_590_body" pos="3.955699 -0.022683 0.024374" quat="0.98907502 -0.01897154 0.02418468 -0.14417274">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_590" type="mesh" mesh="rock_visual_mesh_590" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_590" type="ellipsoid" size="0.0429 0.0364 0.0243" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0560"/>
+    </body>
+    <body name="rock_dynamic_591_body" pos="3.937146 0.190415 0.036700" quat="0.99978676 -0.01228832 -0.01542149 -0.00613196">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_591" type="mesh" mesh="rock_visual_mesh_591" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_591" type="ellipsoid" size="0.0537 0.0258 0.0249" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0525"/>
+    </body>
+    <body name="rock_dynamic_603_body" pos="3.997083 0.565533 0.019830" quat="0.08850266 -0.01109601 0.00177496 0.99601255">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_603" type="mesh" mesh="rock_visual_mesh_603" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_603" type="ellipsoid" size="0.0542 0.0291 0.0198" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0492"/>
+    </body>
+    <body name="rock_dynamic_605_body" pos="4.049335 -0.370970 0.036248" quat="0.99157771 -0.00159336 -0.01134911 -0.12900503">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_605" type="mesh" mesh="rock_visual_mesh_605" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_605" type="ellipsoid" size="0.0460 0.0418 0.0188" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0542"/>
+    </body>
+    <body name="rock_dynamic_607_body" pos="4.036606 -0.106564 0.036582" quat="0.47700691 0.00540260 -0.00904355 0.87883641">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_607" type="mesh" mesh="rock_visual_mesh_607" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_607" type="ellipsoid" size="0.0349 0.0367 0.0173" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0402"/>
+    </body>
+    <body name="rock_dynamic_610_body" pos="4.053243 0.256471 0.011956" quat="0.91739866 -0.00779743 -0.02223526 -0.39727132">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_610" type="mesh" mesh="rock_visual_mesh_610" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_610" type="ellipsoid" size="0.0539 0.0267 0.0117" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0349"/>
+    </body>
+    <body name="rock_dynamic_616_body" pos="4.077082 -0.141848 0.014266" quat="0.81851851 -0.00485977 -0.01359461 -0.57429871">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_616" type="mesh" mesh="rock_visual_mesh_616" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_616" type="ellipsoid" size="0.0520 0.0300 0.0142" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0402"/>
+    </body>
+    <body name="rock_dynamic_630_body" pos="4.143627 0.469282 0.018118" quat="0.98743724 0.01623083 -0.00586005 0.15706661">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_630" type="mesh" mesh="rock_visual_mesh_630" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_630" type="ellipsoid" size="0.0422 0.0259 0.0181" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0378"/>
+    </body>
+    <body name="rock_dynamic_644_body" pos="4.224526 -0.060592 0.034107" quat="0.94612236 0.01617591 0.00389048 0.32338165">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_644" type="mesh" mesh="rock_visual_mesh_644" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_644" type="ellipsoid" size="0.0542 0.0414 0.0341" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0944"/>
+    </body>
+    <body name="rock_dynamic_649_body" pos="4.287075 -0.490185 0.032601" quat="0.99544193 -0.01624570 -0.00223801 -0.09394910">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_649" type="mesh" mesh="rock_visual_mesh_649" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_649" type="ellipsoid" size="0.0455 0.0349 0.0326" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0698"/>
+    </body>
+    <body name="rock_dynamic_651_body" pos="4.307274 -0.235270 0.045032" quat="0.92111897 -0.03209400 0.02564354 0.38710752">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_651" type="mesh" mesh="rock_visual_mesh_651" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_651" type="ellipsoid" size="0.0670 0.0473 0.0285" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.1085"/>
+    </body>
+    <body name="rock_dynamic_657_body" pos="4.300639 0.550992 0.017788" quat="0.36257213 0.01225226 -0.02433304 0.93155742">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_657" type="mesh" mesh="rock_visual_mesh_657" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_657" type="ellipsoid" size="0.0622 0.0318 0.0176" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0528"/>
+    </body>
+    <body name="rock_dynamic_663_body" pos="4.311212 0.161430 0.042783" quat="0.96784235 0.00569862 -0.03059201 0.24962540">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_663" type="mesh" mesh="rock_visual_mesh_663" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_663" type="ellipsoid" size="0.0493 0.0377 0.0305" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0746"/>
+    </body>
+    <body name="rock_dynamic_666_body" pos="4.349340 0.501780 0.058039" quat="0.59360292 -0.00566818 -0.01104070 -0.80466238">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_666" type="mesh" mesh="rock_visual_mesh_666" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_666" type="ellipsoid" size="0.0513 0.0535 0.0340" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.1115"/>
+    </body>
+    <body name="rock_dynamic_673_body" pos="4.395888 0.294031 0.026012" quat="0.89304406 0.01573352 0.00522597 -0.44966371">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_673" type="mesh" mesh="rock_visual_mesh_673" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_673" type="ellipsoid" size="0.0382 0.0375 0.0260" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0553"/>
+    </body>
+    <body name="rock_dynamic_676_body" pos="4.458721 -0.545815 0.057588" quat="0.50410740 -0.02705272 -0.01573730 -0.86307371">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_676" type="mesh" mesh="rock_visual_mesh_676" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_676" type="ellipsoid" size="0.0607 0.0300 0.0237" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0611"/>
+    </body>
+    <body name="rock_dynamic_678_body" pos="4.426536 -0.299023 0.063814" quat="0.22273143 0.03628275 0.01201400 -0.97413035">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_678" type="mesh" mesh="rock_visual_mesh_678" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_678" type="ellipsoid" size="0.0613 0.0486 0.0281" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.1017"/>
+    </body>
+    <body name="rock_dynamic_679_body" pos="4.439687 -0.090572 0.017610" quat="0.67585366 0.00850297 -0.00399585 -0.73697596">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_679" type="mesh" mesh="rock_visual_mesh_679" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_679" type="ellipsoid" size="0.0468 0.0421 0.0176" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0526"/>
+    </body>
+    <body name="rock_dynamic_690_body" pos="4.516315 0.136215 0.018987" quat="0.90643002 -0.00663688 0.02008066 0.42182619">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_690" type="mesh" mesh="rock_visual_mesh_690" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_690" type="ellipsoid" size="0.0474 0.0520 0.0189" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0645"/>
+    </body>
+    <body name="rock_dynamic_694_body" pos="4.533733 -0.564184 0.056070" quat="0.97082548 0.01276480 0.00903877 -0.23927651">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_694" type="mesh" mesh="rock_visual_mesh_694" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_694" type="ellipsoid" size="0.0463 0.0334 0.0196" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0482"/>
+    </body>
+    <body name="rock_dynamic_713_body" pos="4.674829 -0.374605 0.019656" quat="0.75351043 0.01863080 -0.00804012 0.65712273">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_713" type="mesh" mesh="rock_visual_mesh_713" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_713" type="ellipsoid" size="0.0448 0.0280 0.0196" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0426"/>
+    </body>
+    <body name="rock_dynamic_714_body" pos="4.655853 -0.281100 0.024878" quat="0.16033913 0.01100820 -0.01959479 -0.98680607">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_714" type="mesh" mesh="rock_visual_mesh_714" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_714" type="ellipsoid" size="0.0438 0.0521 0.0248" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0746"/>
+    </body>
+    <body name="rock_dynamic_715_body" pos="4.634547 -0.104291 0.028717" quat="0.89400365 0.00975335 -0.01189770 -0.44779547">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_715" type="mesh" mesh="rock_visual_mesh_715" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_715" type="ellipsoid" size="0.0537 0.0433 0.0287" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0848"/>
+    </body>
+    <body name="rock_dynamic_719_body" pos="4.664934 0.433267 0.057392" quat="0.39698211 -0.00599907 0.00693834 0.91778051">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_719" type="mesh" mesh="rock_visual_mesh_719" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_719" type="ellipsoid" size="0.0586 0.0452 0.0279" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0918"/>
+    </body>
+    <body name="rock_dynamic_723_body" pos="4.716903 -0.236027 0.059813" quat="0.21137079 -0.00135301 0.02961610 0.97695622">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_723" type="mesh" mesh="rock_visual_mesh_723" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_723" type="ellipsoid" size="0.0691 0.0449 0.0354" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.1279"/>
+    </body>
+    <body name="rock_dynamic_725_body" pos="4.755654 0.041400 0.027210" quat="0.86192998 -0.01432624 0.00775763 0.50676552">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_725" type="mesh" mesh="rock_visual_mesh_725" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_725" type="ellipsoid" size="0.0396 0.0286 0.0272" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0488"/>
+    </body>
+    <body name="rock_dynamic_726_body" pos="4.723065 0.129862 0.018838" quat="0.99869231 -0.02918355 0.01160902 0.04033881">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_726" type="mesh" mesh="rock_visual_mesh_726" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_726" type="ellipsoid" size="0.0532 0.0511 0.0186" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0685"/>
+    </body>
+    <body name="rock_dynamic_746_body" pos="4.831332 0.372481 0.037655" quat="0.37715475 0.04066974 0.03677085 -0.92452592">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_746" type="mesh" mesh="rock_visual_mesh_746" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_746" type="ellipsoid" size="0.0627 0.0382 0.0247" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0772"/>
+    </body>
+    <body name="rock_dynamic_751_body" pos="4.884197 -0.096857 0.057078" quat="0.71970398 0.00162399 0.00133731 0.69427786">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_751" type="mesh" mesh="rock_visual_mesh_751" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_751" type="ellipsoid" size="0.0448 0.0450 0.0337" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0859"/>
+    </body>
+    <body name="rock_dynamic_758_body" pos="4.940180 -0.406686 0.020728" quat="0.35960161 -0.01587298 0.00188425 0.93296901">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_758" type="mesh" mesh="rock_visual_mesh_758" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_758" type="ellipsoid" size="0.0410 0.0391 0.0207" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0511"/>
+    </body>
+    <body name="rock_dynamic_762_body" pos="4.950289 0.127913 0.021662" quat="0.05557045 -0.02279956 -0.01057741 -0.99813838">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_762" type="mesh" mesh="rock_visual_mesh_762" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_762" type="ellipsoid" size="0.0581 0.0524 0.0215" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0834"/>
+    </body>
+    <body name="rock_dynamic_764_body" pos="4.917492 0.366373 0.054700" quat="0.99421827 0.02381320 -0.00803488 0.10439541">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_764" type="mesh" mesh="rock_visual_mesh_764" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_764" type="ellipsoid" size="0.0486 0.0314 0.0231" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0533"/>
+    </body>
+    <body name="rock_dynamic_768_body" pos="4.989895 -0.302365 0.030287" quat="0.69401137 -0.02974789 0.00361147 -0.71934014">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_768" type="mesh" mesh="rock_visual_mesh_768" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_768" type="ellipsoid" size="0.0589 0.0418 0.0302" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0922"/>
+    </body>
+    <body name="rock_dynamic_788_body" pos="5.100097 -0.042082 0.072590" quat="0.48541104 -0.02404172 -0.04499505 0.87279641">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_788" type="mesh" mesh="rock_visual_mesh_788" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_788" type="ellipsoid" size="0.0410 0.0436 0.0214" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0564"/>
+    </body>
+    <body name="rock_dynamic_789_body" pos="5.079248 0.148022 0.024882" quat="0.81537859 0.03482262 -0.04623299 0.57602747">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_789" type="mesh" mesh="rock_visual_mesh_789" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_789" type="ellipsoid" size="0.0557 0.0349 0.0242" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0651"/>
+    </body>
+    <body name="rock_dynamic_793_body" pos="5.119986 -0.490124 0.047433" quat="0.90814824 -0.02586194 -0.03688783 -0.41621776">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_793" type="mesh" mesh="rock_visual_mesh_793" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_793" type="ellipsoid" size="0.0391 0.0347 0.0288" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0572"/>
+    </body>
+    <body name="rock_dynamic_795_body" pos="5.149990 -0.198609 0.028312" quat="0.36025116 -0.01250581 -0.00500563 -0.93275809">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_795" type="mesh" mesh="rock_visual_mesh_795" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_795" type="ellipsoid" size="0.0443 0.0323 0.0283" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0585"/>
+    </body>
+    <body name="rock_dynamic_800_body" pos="5.163793 0.392995 0.053023" quat="0.89210668 0.00624700 0.04084819 -0.44993118">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_800" type="mesh" mesh="rock_visual_mesh_800" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_800" type="ellipsoid" size="0.0641 0.0428 0.0224" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0795"/>
+    </body>
+    <body name="rock_dynamic_805_body" pos="5.169749 -0.095083 0.051082" quat="0.98415672 0.05899026 0.04697671 -0.16046459">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_805" type="mesh" mesh="rock_visual_mesh_805" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_805" type="ellipsoid" size="0.0520 0.0416 0.0255" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0732"/>
+    </body>
+    <body name="rock_dynamic_811_body" pos="5.241679 -0.494995 0.043405" quat="0.70141166 -0.04625637 0.01500477 0.71109555">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_811" type="mesh" mesh="rock_visual_mesh_811" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_811" type="ellipsoid" size="0.0564 0.0322 0.0354" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0823"/>
+    </body>
+    <body name="rock_dynamic_818_body" pos="5.226515 0.389191 0.018965" quat="0.97961141 0.00038317 -0.01328779 -0.20046139">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_818" type="mesh" mesh="rock_visual_mesh_818" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_818" type="ellipsoid" size="0.0641 0.0437 0.0189" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0708"/>
+    </body>
+    <body name="rock_dynamic_826_body" pos="5.291337 0.242008 0.043968" quat="0.71636308 -0.01376940 -0.01130904 0.69750014">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_826" type="mesh" mesh="rock_visual_mesh_826" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_826" type="ellipsoid" size="0.0441 0.0304 0.0233" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0493"/>
+    </body>
+    <body name="rock_dynamic_831_body" pos="5.338127 -0.234866 0.030215" quat="0.98803566 -0.00726262 -0.01631796 -0.15318785">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_831" type="mesh" mesh="rock_visual_mesh_831" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_831" type="ellipsoid" size="0.0420 0.0387 0.0302" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0670"/>
+    </body>
+    <body name="rock_dynamic_832_body" pos="5.328645 -0.144574 0.021808" quat="0.04212155 -0.00068815 0.00895600 0.99907212">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_832" type="mesh" mesh="rock_visual_mesh_832" material="stone_dark" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_832" type="ellipsoid" size="0.0504 0.0462 0.0218" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0688"/>
+    </body>
+    <body name="rock_dynamic_834_body" pos="5.376904 0.093815 0.039252" quat="0.92448964 0.01162725 0.03818844 -0.37911127">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_834" type="mesh" mesh="rock_visual_mesh_834" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_834" type="ellipsoid" size="0.0530 0.0461 0.0350" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.1036"/>
+    </body>
+    <body name="rock_dynamic_836_body" pos="5.341092 0.393263 0.023602" quat="0.92396371 -0.01185109 0.02106903 0.38171547">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_836" type="mesh" mesh="rock_visual_mesh_836" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_836" type="ellipsoid" size="0.0517 0.0459 0.0235" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0738"/>
+    </body>
+    <body name="rock_dynamic_839_body" pos="5.441353 -0.376124 0.016339" quat="0.18118280 0.01869290 -0.02814040 0.98286901">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_839" type="mesh" mesh="rock_visual_mesh_839" material="stone_brown" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_839" type="ellipsoid" size="0.0401 0.0484 0.0161" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0492"/>
+    </body>
+    <body name="rock_dynamic_843_body" pos="5.437741 0.144548 0.018622" quat="0.61636349 0.01523346 0.03633633 -0.78647546">
+      <joint type="free" damping="2.0"/>
+      <geom name="rock_visual_843" type="mesh" mesh="rock_visual_mesh_843" material="stone_gray" contype="0" conaffinity="0" density="0"/>
+      <geom name="rock_collision_843" type="ellipsoid" size="0.0415 0.0392 0.0184" rgba="0 0 0 0" contype="1" conaffinity="1" condim="3" priority="2" friction="1.2 0.02 0.002" solref="0.035 0.9" solimp="0.90 0.97 0.001" mass="0.0479"/>
+    </body>
+  </worldbody>
+</mujoco>
