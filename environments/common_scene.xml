@@ -8,7 +8,7 @@
   <!-- <include file="fixed_object/unitree_path/unitree_path.xml"/> -->
 
   rock:
-  <!-- <include file="rock/rocky_pathway.xml"/> -->
+  <include file="rock/rocky_pathway.xml"/>
   
   floor:
   <!-- <include file="floor/rough/rough_floor.xml"/> -->

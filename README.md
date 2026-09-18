@@ -56,42 +56,43 @@ Add screenshots, GIFs, or video links here to show what each environment looks l
 
 ### Slopes and Stairs
 
-![Slopes and stairs](docs/media/slopes_stairs.png)
+![Slopes and stairs](docs/media/fixed_object/stairs_suspend.png)
 
 - Scene examples:
   - `environments/fixed_object/slope_normal/slope_normal.xml`
   - `environments/fixed_object/stairs_normal/stairs_normal.xml`
   - `environments/fixed_object/stairs_suspend/stairs_suspend.xml`
 - Description: Fixed terrain objects for testing locomotion stability, foot placement, and obstacle traversal.
-- Video: [Add video link here](https://example.com)
 
 ### Rough and Rugged Floors
 
-![Rough and rugged floors](docs/media/rough_rugged_floor.png)
+![Rough and rugged floors](docs/media/floor/rugged_floor.png)
 
 - Scene examples:
   - `environments/floor/rough/rough_floor.xml`
   - `environments/floor/rugged/rugged_floor.xml`
 - Description: Uneven terrain assets for evaluating robustness on non-flat ground.
-- Video: [Add video link here](https://example.com)
 
 ### Playground and Obstacle Courses
-
-![Playground and obstacle courses](docs/media/playground_obstacles.png)
-
+![soccer court](docs/media/playground/soccer_normal_court.png)
+![wrc obstacle course](docs/media/playground/wrc_obstacle_course.png)
+![badminton court](docs/media/playground/badminton_court.png)
 - Scene examples:
+  - `environments/playground/soccer_court/normal_court/normal_court.xml`
   - `environments/playground/badminton_court/badminton_court.xml`
   - `environments/playground/wrc_obstacle_course/wrc_obstacle_course.xml`
 - Description: Larger structured environments for navigation, locomotion, and task-oriented experiments.
-- Video: [Add video link here](https://example.com)
+- Video: 
+<p align="center">
+  <img src="docs/media/playground/soccer_court.gif" width="800">
+</p>
 
 ### Rocky Pathway
 
-![Rocky pathway](docs/media/rocky_pathway.png)
+![Rocky pathway](docs/media/rock/rocky_pathway.png)
 
 - Scene: `environments/rock/rocky_pathway.xml`
 - Description: Rock-based terrain for testing balance, terrain adaptation, and contact behavior.
-- Video: [Add video link here](https://example.com)
 
 ## Requirements
 
